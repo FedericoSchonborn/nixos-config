@@ -1,15 +1,9 @@
 {
   description = "NixOS configuration files";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-  outputs = { self, nixpkgs, home-manager }:
+  outputs = { self, nixpkgs }:
     {
       nixosConfigurations.Swift-SF314-52 = nixpkgs.lib.nixosSystem
         {
