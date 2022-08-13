@@ -70,7 +70,6 @@
     enableBashCompletion = true;
     syntaxHighlighting.enable = true;
     vteIntegration = true;
-    zsh-autoenv.enable = true;
   };
   programs.kdeconnect.enable = true;
   virtualisation.podman = {
