@@ -6,18 +6,26 @@
     excludePackages = [ pkgs.xterm ];
     layout = "latam";
 
-    displayManager = {
-      defaultSession = "plasmawayland"; # Wayland 😎
+    # Plasma
+    # displayManager = {
+    #   defaultSession = "plasmawayland"; # Wayland 😎
+    #
+    #   sddm = {
+    #     enable = true;
+    #     autoNumlock = true;
+    #   };
+    # };
+    #
+    # desktopManager.plasma5 = {
+    #   enable = true;
+    #   phononBackend = "vlc";
+    # };
 
-      sddm = {
-        enable = true;
-        autoNumlock = true;
-      };
-    };
+    # GNOME
+    displayManager.gdm.enable = true;
 
-    desktopManager.plasma5 = {
+    desktopManager.gnome = {
       enable = true;
-      phononBackend = "vlc";
     };
 
     libinput = {

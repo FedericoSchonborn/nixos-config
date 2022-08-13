@@ -9,6 +9,7 @@
     ./nix
     ./powerManagement
     ./programs
+    ./qt5
     ./security
     ./services
     ./time
