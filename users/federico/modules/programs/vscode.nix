@@ -62,7 +62,7 @@
       keybindings = [
         # View: Toggle Terminal
         {
-          key = "ctrl+;";
+          key = "ctrl+[Semicolon]";
           command = "workbench.action.terminal.toggleTerminal";
         }
       ];
