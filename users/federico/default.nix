@@ -10,25 +10,22 @@
   home = {
     username = "federico";
     homeDirectory = "/home/federico";
+
+    # Packages that should be installed to the user profile.
+    packages = with pkgs;
+      [
+        bitwarden
+        discord
+        gimp
+        inkscape
+        element-desktop
+        minecraft
+        spotify
+        tdesktop
+        rnix-lsp
+        nixpkgs-fmt
+      ];
   };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
-  # Packages that should be installed to the user profile.
-  home.packages = with pkgs;
-    [
-      bitwarden
-      discord
-      gimp
-      inkscape
-      element-desktop
-      minecraft
-      spotify
-      tdesktop
-      rnix-lsp
-      nixpkgs-fmt
-    ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

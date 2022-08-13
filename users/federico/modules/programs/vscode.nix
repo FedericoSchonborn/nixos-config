@@ -62,7 +62,7 @@
       keybindings = [
         # View: Toggle Terminal
         {
-          key = "ctrl+[Semicolon]";
+          key = "ctrl+[Semicolon]"; # Ctrl+Ñ
           command = "workbench.action.terminal.toggleTerminal";
         }
       ];
@@ -107,7 +107,7 @@
             sha256 = "IU/looiu6tluAp8u6MeSNCd7B8SSMZ6CEZ64mMsTNmU=";
           }
           {
-            # Remote - SSH= Edition Configuration Files
+            # Remote - SSH: Edition Configuration Files
             name = "remote-ssh-edit";
             publisher = "ms-vscode-remote";
             version = "0.80.0";

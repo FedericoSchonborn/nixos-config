@@ -5,4 +5,6 @@
     ./git.nix
     ./vscode.nix
   ];
+
+  programs.home-manager.enable = true;
 }
