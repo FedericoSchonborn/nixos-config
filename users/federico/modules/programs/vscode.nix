@@ -10,7 +10,7 @@
           "cmake.configureOnOpen" = true;
           "cmake.generator" = "Ninja";
           "diffEditor.ignoreTrimWhitespace" = false;
-          "editor.fontFamily" = "'Cascadia Code'; 'Droid Sans Mono'; 'monospace'; monospace";
+          "editor.fontFamily" = "'Cascadia Code', 'Droid Sans Mono', monospace";
           "editor.fontLigatures" = true;
           "editor.formatOnSave" = true;
           "editor.minimap.renderCharacters" = false;
@@ -62,7 +62,7 @@
       keybindings = [
         # View: Toggle Terminal
         {
-          key = "ctrl+ñ"; # ctrl+; in English keyboards
+          key = "ctrl+;";
           command = "workbench.action.terminal.toggleTerminal";
         }
       ];
