@@ -125,7 +125,7 @@
     firefox
     kate
     spectacle
-    libreoffice
+    libreoffice-fresh
 
     rnix-lsp
     nixpkgs-fmt
