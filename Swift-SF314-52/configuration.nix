@@ -84,6 +84,12 @@
   hardware.steam-hardware.enable = true;
   hardware.video.hidpi.enable = true;
   hardware.cpu.intel.updateMicrocode = true;
+  hardware.xpadneo.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    package = pkgs.bluezFull;
+    powerOnBoot = true;
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.defaultUserShell = pkgs.zsh;
