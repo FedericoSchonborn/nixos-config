@@ -1,13 +1,34 @@
 {
   description = "NixOS configuration files";
 
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-  outputs = { self, nixpkgs }:
+  inputs =
     {
-      nixosConfigurations.Swift-SF314-52 = nixpkgs.lib.nixosSystem
-        {
-          modules = [ ./Swift-SF314-52/configuration.nix ];
-        };
+      nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+      home-manager = {
+        url = "github:nix-community/home-manager/master";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+    };
+
+  outputs = inputs @ { nixpkgs, home-manager, ... }:
+    {
+      nixosConfigurations = {
+        # Acer Swift 3 (SF314-52)
+        hedgehog = nixpkgs.lib.nixosSystem
+          {
+            system = "x86_64-linux";
+            specialArgs = inputs;
+            modules = [
+              ./hosts/hedgehog
+            ];
+          };
+
+        # Raspberry Pi 4 Model B (1GB)
+        # echidna = nixpkgs.lib.nixosSystem
+        #   {
+        #     system = "aarch64-linux";
+        #     modules = [ ./hosts/echidna ];
+        #   };
+      };
     };
 }
