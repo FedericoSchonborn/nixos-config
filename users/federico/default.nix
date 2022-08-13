@@ -5,28 +5,6 @@
     ./modules
   ];
 
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
-  home = {
-    username = "federico";
-    homeDirectory = "/home/federico";
-
-    # Packages that should be installed to the user profile.
-    packages = with pkgs;
-      [
-        bitwarden
-        discord
-        gimp
-        inkscape
-        element-desktop
-        minecraft
-        spotify
-        tdesktop
-        rnix-lsp
-        nixpkgs-fmt
-      ];
-  };
-
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
