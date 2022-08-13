@@ -3,7 +3,7 @@
     ./bluetooth.nix
   ];
 
-  hardware.enableAllFirmware = true;
+  hardware.enableRedistributableFirmware = true;
   hardware.cpu.intel.updateMicrocode = true;
   hardware.opengl.driSupport32Bit = true;
   hardware.video.hidpi.enable = true;
