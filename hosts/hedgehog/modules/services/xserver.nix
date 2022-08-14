@@ -3,30 +3,10 @@
 {
   services.xserver = {
     enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
     excludePackages = [ pkgs.xterm ];
     layout = "latam";
-
-    # Plasma
-    # displayManager = {
-    #   defaultSession = "plasmawayland"; # Wayland 😎
-    #
-    #   sddm = {
-    #     enable = true;
-    #     autoNumlock = true;
-    #   };
-    # };
-    #
-    # desktopManager.plasma5 = {
-    #   enable = true;
-    #   phononBackend = "vlc";
-    # };
-
-    # GNOME
-    displayManager.gdm.enable = true;
-
-    desktopManager.gnome = {
-      enable = true;
-    };
 
     libinput = {
       enable = true;
