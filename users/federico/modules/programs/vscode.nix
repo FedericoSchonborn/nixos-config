@@ -50,7 +50,7 @@
           "remote.containers.dockerPath" = "podman";
           "rust-analyzer.checkOnSave.command" = "clippy";
           "rust-analyzer.imports.prefix" = "crate";
-          "terminal.integrated.shellIntegration.enabled" = true;
+          "terminal.integrated.shellIntegration.enabled" = false;
           "window.autoDetectColorScheme" = true;
           "window.commandCenter" = true;
           "window.titleBarStyle" = "custom";
@@ -143,7 +143,4 @@
           }
         ];
     };
-
-  # Required by VS Code settings sync.
-  services.gnome-keyring.enable = true;
 }
