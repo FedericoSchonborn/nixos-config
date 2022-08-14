@@ -6,6 +6,7 @@
     "org/gnome/system/location".enabled = true;
     "org/gnome/shell/weather".automatic-location = true;
     "org/gnome/desktop/datetime".automatic-timezone = true;
+    "org/gnome/desktop/wm/preferences".button-layout = "appmenu:minimize,maximize,close";
 
     "org/gnome/desktop/privacy" = {
       remove-old-temp-files = true;
