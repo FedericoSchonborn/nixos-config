@@ -2,10 +2,7 @@
 
 {
   environment = {
-    gnome.excludePackages = with pkgs.gnome; [
-      epiphany
-      gnome-software
-    ];
+    gnome.excludePackages = with pkgs.gnome; [ epiphany gnome-software ];
     localBinInPath = true;
     systemPackages = with pkgs; [
       firefox

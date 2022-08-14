@@ -1,3 +1,1 @@
-{
-  time.timeZone = "America/Argentina/Buenos_Aires";
-}
+{ time.timeZone = "America/Argentina/Buenos_Aires"; }

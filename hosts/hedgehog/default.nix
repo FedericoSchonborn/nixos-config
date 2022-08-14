@@ -1,12 +1,11 @@
 { config, pkgs, home-manager, modulesPath, ... }:
 
 {
-  imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
-      ./modules
-      home-manager.nixosModule
-    ];
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+    ./modules
+    home-manager.nixosModule
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
