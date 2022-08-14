@@ -1,1 +1,1 @@
-{ imports = [ ./home ./programs ]; }
+{ imports = [ ./dconf ./home ./programs ]; }

@@ -1,4 +1,6 @@
 {
-  qt5.platformTheme = "gnome";
-  qt5.style = "adwaita";
+  qt5 = {
+    platformTheme = "gnome";
+    style = "adwaita";
+  };
 }

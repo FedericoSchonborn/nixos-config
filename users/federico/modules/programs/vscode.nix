@@ -3,6 +3,8 @@
 {
   programs.vscode = {
     enable = true;
+    mutableExtensionsDir = false;
+
     userSettings = {
       "[markdown]" = {
         "editor.defaultFormatter" = "yzhang.markdown-all-in-one";
@@ -65,6 +67,7 @@
       "workbench.preferredDarkColorTheme" = "Gruvbox Dark Medium";
       "workbench.preferredLightColorTheme" = "Gruvbox Light Medium";
     };
+
     keybindings = [
       # View: Toggle Terminal
       {
@@ -72,6 +75,7 @@
         command = "workbench.action.terminal.toggleTerminal";
       }
     ];
+
     extensions = with pkgs.vscode-extensions;
       [
         arrterian.nix-env-selector # Nix Env Selector

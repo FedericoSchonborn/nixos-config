@@ -1,6 +1,8 @@
 {
-  imports = [ ./gnupg.nix ./kdeconnect.nix ./steam.nix ./zsh.nix ];
+  imports = [ ./gnupg.nix ./steam.nix ./zsh.nix ];
 
-  programs.command-not-found.enable = true;
-  programs.gamemode.enable = true;
+  programs = {
+    command-not-found.enable = true;
+    gamemode.enable = true;
+  };
 }

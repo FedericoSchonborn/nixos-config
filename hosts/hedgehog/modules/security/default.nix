@@ -1,6 +1,8 @@
 {
-  security.rtkit.enable = true;
-  security.sudo.extraConfig = ''
-    Defaults pwfeedback
-  '';
+  security = {
+    rtkit.enable = true;
+    sudo.extraConfig = ''
+      Defaults pwfeedback
+    '';
+  };
 }

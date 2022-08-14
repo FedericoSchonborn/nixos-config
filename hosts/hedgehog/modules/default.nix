@@ -3,6 +3,7 @@
     ./boot
     ./environment
     ./fileSystems
+    ./gnome
     ./hardware
     ./i18n
     ./networking
