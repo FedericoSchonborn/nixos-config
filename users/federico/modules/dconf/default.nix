@@ -21,8 +21,11 @@
     "org/gnome/shell" = {
       enabled-extensions = with pkgs.gnomeExtensions; [
         appindicator.extensionUuid
-        dash-to-dock.extensionUuid
+        bluetooth-quick-connect.extensionUuid
         desktop-icons-ng-ding.extensionUuid
+        dash-to-panel.extensionUuid
+        sound-output-device-chooser.extensionUuid
+        tiling-assistant.extensionUuid
       ];
 
       favorite-apps = [
@@ -44,17 +47,6 @@
 
     "org/gnome/shell/extensions/appindicator" = {
       icon-opacity = 255;
-    };
-
-    "org/gnome/shell/extensions/dash-to-dock" = {
-      click-action = "minimize-or-previews";
-      disable-overview-on-startup = true;
-      height-fraction = 1;
-      running-indicator-style = "DOTS";
-      scroll-action = "cycle-windows";
-      shift-middle-click-action = "quit";
-      show-mounts = false;
-      show-trash = false;
     };
   };
 }

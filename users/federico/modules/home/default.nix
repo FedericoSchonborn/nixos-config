@@ -22,9 +22,14 @@
       rnix-lsp
       spotify
       tdesktop
+
+      # GNOME Extensions
       appindicator
-      dash-to-dock
+      bluetooth-quick-connect
       desktop-icons-ng-ding
+      dash-to-panel
+      sound-output-device-chooser
+      tiling-assistant
     ];
   };
 }
