@@ -5,6 +5,10 @@
     username = "federico";
     homeDirectory = "/home/federico";
 
+    files.".zshrc" = {
+      source = ./zshrc;
+    };
+
     # Packages that should be installed to the user profile.
     packages = with pkgs; with gnomeExtensions; [
       bitwarden
