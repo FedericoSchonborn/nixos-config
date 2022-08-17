@@ -13,7 +13,6 @@
     ./qt5.nix
     ./security.nix
     ./services.nix
-    ./time.nix
     ./users.nix
     ./virtualisation.nix
   ];
