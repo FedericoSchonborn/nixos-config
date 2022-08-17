@@ -19,17 +19,19 @@
     nixosConfigurations = {
       # Acer Swift 3 (SF314-52)
       hedgehog = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         specialArgs = inputs;
-        modules = [ ./hosts/hedgehog/configuration.nix ];
+        modules = [
+          ./hosts/hedgehog/configuration.nix
+        ];
       };
 
       # Raspberry Pi 4 Model B (1GB)
-      # echidna = nixpkgs.lib.nixosSystem
-      #   {
-      #     system = "aarch64-linux";
-      #     modules = [ ./hosts/echidna ];
-      #   };
+      # echidna = nixpkgs.lib.nixosSystem {
+      #   specialArgs = inputs;
+      #   modules = [
+      #     ./hosts/echidna/configuration.nix
+      #   ];
+      # };
     };
   };
 }

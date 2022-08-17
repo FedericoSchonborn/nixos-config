@@ -22,7 +22,6 @@
         "sd_mod"
         "rtsx_usb_sdmmc"
       ];
-      kernelModules = [ ];
     };
   };
 }

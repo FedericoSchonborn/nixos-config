@@ -9,4 +9,7 @@
       support32Bit = true;
     };
   };
+
+  # Required by Pipewire.
+  hardware.pulseaudio.enable = false;
 }
