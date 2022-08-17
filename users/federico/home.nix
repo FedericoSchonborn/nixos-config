@@ -1,7 +1,11 @@
 { config, pkgs, fenix, ... }:
 
 {
-  imports = [ ./modules ];
+  imports = [
+    ./modules/dconf.nix
+    ./modules/home.nix
+    ./modules/programs.nix
+  ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

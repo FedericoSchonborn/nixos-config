@@ -21,7 +21,7 @@
       hedgehog = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
-        modules = [ ./hosts/hedgehog ];
+        modules = [ ./hosts/hedgehog/configuration.nix ];
       };
 
       # Raspberry Pi 4 Model B (1GB)

@@ -3,8 +3,22 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    ./modules
     home-manager.nixosModule
+    ./modules/boot.nix
+    ./modules/environment.nix
+    ./modules/file-systems.nix
+    ./modules/gnome.nix
+    ./modules/hardware.nix
+    ./modules/i18n.nix
+    ./modules/networking.nix
+    ./modules/nix.nix
+    ./modules/power-management.nix
+    ./modules/programs.nix
+    ./modules/qt5.nix
+    ./modules/security.nix
+    ./modules/services.nix
+    ./modules/users.nix
+    ./modules/virtualisation.nix
   ];
 
   # This value determines the NixOS release from which the default
