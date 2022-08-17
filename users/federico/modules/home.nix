@@ -5,8 +5,8 @@
     username = "federico";
     homeDirectory = "/home/federico";
 
-    files.".zshrc" = {
-      source = ./zshrc;
+    file.".zshrc" = {
+      source = ./home/zshrc;
     };
 
     # Packages that should be installed to the user profile.

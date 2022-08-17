@@ -18,6 +18,7 @@
       "editor.minimap.renderCharacters" = false;
       "editor.renderWhitespace" = "trailing";
       "evenBetterToml.semanticTokens" = true;
+      "explorer.confirmDragAndDrop" = false;
       "discord.suppressNotifications" = true;
       "files.associations" = { "LICENSE*" = "plaintext"; };
       "files.insertFinalNewline" = true;

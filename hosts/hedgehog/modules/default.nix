@@ -1,20 +1,20 @@
 {
   imports = [
-    ./boot
-    ./environment
-    ./fileSystems
-    ./gnome
-    ./hardware
-    ./i18n
-    ./networking
-    ./nix
-    ./powerManagement
-    ./programs
-    ./qt5
-    ./security
-    ./services
-    ./time
-    ./users
-    ./virtualisation
+    ./boot.nix
+    ./environment.nix
+    ./file-systems.nix
+    ./gnome.nix
+    ./hardware.nix
+    ./i18n.nix
+    ./networking.nix
+    ./nix.nix
+    ./power-management.nix
+    ./programs.nix
+    ./qt5.nix
+    ./security.nix
+    ./services.nix
+    ./time.nix
+    ./users.nix
+    ./virtualisation.nix
   ];
 }

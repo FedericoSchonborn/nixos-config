@@ -1,7 +1,9 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./loader.nix ];
+  imports = [
+    ./boot/loader.nix
+  ];
 
   boot = {
     extraModulePackages = [ ];

@@ -1,1 +1,7 @@
-{ imports = [ ./dconf ./home ./programs ]; }
+{
+  imports = [
+    ./dconf.nix
+    ./home.nix
+    ./programs.nix
+  ];
+}
