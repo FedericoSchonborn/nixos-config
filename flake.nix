@@ -22,6 +22,7 @@
         specialArgs = inputs;
         modules = [
           ./hosts/hedgehog/configuration.nix
+          home-manager.nixosModules.home-manager
         ];
       };
 

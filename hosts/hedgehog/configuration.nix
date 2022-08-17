@@ -3,7 +3,6 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    home-manager.nixosModule
     ./modules/boot.nix
     ./modules/environment.nix
     ./modules/file-systems.nix
