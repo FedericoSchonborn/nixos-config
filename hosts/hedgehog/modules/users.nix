@@ -15,6 +15,6 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.federico = import ../../../../users/federico;
+    users.federico = import ../../../users/federico;
   };
 }
