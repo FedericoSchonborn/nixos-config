@@ -14,7 +14,6 @@
       bitwarden
       discord
       element-desktop
-      fenix.stable.defaultToolchain
       firefox
       gimp
       grml-zsh-config
