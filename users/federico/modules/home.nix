@@ -16,6 +16,14 @@
       libreoffice-fresh
       minecraft
       spotify
+
+      # GNOME Extensions
+      gnomeExtensions.appindicator
+      gnomeExtensions.bluetooth-quick-connect
+      gnomeExtensions.desktop-icons-ng-ding
+      gnomeExtensions.dash-to-panel
+      gnomeExtensions.sound-output-device-chooser
+      gnomeExtensions.tiling-assistant
     ];
   };
 }

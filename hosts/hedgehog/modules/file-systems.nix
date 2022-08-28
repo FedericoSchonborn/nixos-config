@@ -1,6 +1,6 @@
 {
   fileSystems = {
-    "/boot/efi" = {
+    "/boot" = {
       device = "/dev/sda1";
       fsType = "vfat";
     };
@@ -10,9 +10,4 @@
       fsType = "ext4";
     };
   };
-
-  swapDevices = [{
-    device = "/swapfile";
-    size = 8192;
-  }];
 }

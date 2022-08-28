@@ -4,13 +4,13 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     ./modules/boot.nix
+    ./modules/desktop.nix
     ./modules/environment.nix
     ./modules/file-systems.nix
     ./modules/hardware.nix
     ./modules/i18n.nix
     ./modules/networking.nix
     ./modules/nix.nix
-    ./modules/plasma.nix
     ./modules/power-management.nix
     ./modules/programs.nix
     ./modules/security.nix

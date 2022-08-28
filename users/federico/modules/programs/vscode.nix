@@ -53,7 +53,6 @@
       "license.extension" = "";
       "license.year" = "auto";
       "nix.enableLanguageServer" = true;
-      "nix.formatterPath" = "nixfmt";
       "redhat.telemetry.enabled" = true;
       "remote.containers.dockerComposePath" = "podman-compose";
       "remote.containers.dockerPath" = "podman";
@@ -151,6 +150,20 @@
           publisher = "piotrpalarz";
           version = "1.0.3";
           sha256 = "eqNjkoXXkcbtMDr2ndThqQ2qRFPw1ucQi6hv0eCBw3k=";
+        }
+        {
+          # direnv
+          name = "direnv";
+          publisher = "mkhl";
+          version = "0.6.1";
+          sha256 = "5/Tqpn/7byl+z2ATflgKV1+rhdqj+XMEZNbGwDmGwLQ=";
+        }
+        {
+          # nix-develop
+          name = "nix-develop";
+          publisher = "jamesottaway";
+          version = "0.0.1";
+          sha256 = "ldD907spPCgHQ10XphaRAbgkNcYdzACqUOr2Cf5o8zU=";
         }
       ];
   };

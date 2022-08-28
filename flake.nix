@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:nixos/nixos-hardware/master";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -10,7 +11,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, nixos-hardware, home-manager, ... }:
     let
       pkgs = nixpkgs.legacyPackages."x86_64-linux";
     in
@@ -20,7 +21,14 @@
         hedgehog = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
+            # Modules
+            nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
+            nixos-hardware.nixosModules.common-gpu-intel
+            nixos-hardware.nixosModules.common-pc-laptop
+            nixos-hardware.nixosModules.common-pc-laptop-ssd
             home-manager.nixosModules.home-manager
+
+            # Configuration files
             ./hosts/hedgehog/configuration.nix
             ./users/federico/configuration.nix
           ];
