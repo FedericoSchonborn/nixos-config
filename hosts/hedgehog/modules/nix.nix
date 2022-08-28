@@ -1,5 +1,3 @@
-{ fenix, ... }:
-
 {
   nix = {
     gc.automatic = true;
@@ -10,6 +8,5 @@
   nixpkgs = {
     config.allowUnfree = true;
     hostPlatform = "x86_64-linux";
-    overlays = [ fenix.overlay ];
   };
 }

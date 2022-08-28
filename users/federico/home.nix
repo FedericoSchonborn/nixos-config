@@ -1,4 +1,4 @@
-{ config, pkgs, fenix, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
