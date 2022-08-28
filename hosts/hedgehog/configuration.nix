@@ -6,14 +6,13 @@
     ./modules/boot.nix
     ./modules/environment.nix
     ./modules/file-systems.nix
-    ./modules/gnome.nix
     ./modules/hardware.nix
     ./modules/i18n.nix
     ./modules/networking.nix
     ./modules/nix.nix
+    ./modules/plasma.nix
     ./modules/power-management.nix
     ./modules/programs.nix
-    ./modules/qt5.nix
     ./modules/security.nix
     ./modules/services.nix
     ./modules/users.nix

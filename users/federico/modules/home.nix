@@ -10,7 +10,7 @@
     };
 
     # Packages that should be installed to the user profile.
-    packages = with pkgs; with gnomeExtensions; [
+    packages = with pkgs; [
       bitwarden
       discord
       element-desktop
@@ -21,17 +21,7 @@
       libreoffice-fresh
       minecraft
       nix-zsh-completions
-      nixfmt
-      rnix-lsp
       spotify
-
-      # GNOME Extensions
-      appindicator
-      bluetooth-quick-connect
-      desktop-icons-ng-ding
-      dash-to-panel
-      sound-output-device-chooser
-      tiling-assistant
     ];
   };
 }
