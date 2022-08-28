@@ -2,7 +2,6 @@
   imports = [
     ./programs/gnupg.nix
     ./programs/steam.nix
-    ./programs/zsh.nix
   ];
 
   programs = {
