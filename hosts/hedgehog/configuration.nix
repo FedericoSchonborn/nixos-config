@@ -1,4 +1,4 @@
-{ config, home-manager, modulesPath, ... }:
+{ modulesPath, ... }:
 
 {
   imports = [

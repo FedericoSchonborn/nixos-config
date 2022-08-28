@@ -5,7 +5,7 @@
     desktopManager.plasma5 = {
       enable = true;
       phononBackend = "vlc";
-    }
+    };
 
     displayManager.sddm.enable = true;
   };
