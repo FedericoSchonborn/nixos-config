@@ -24,7 +24,6 @@
       nixfmt
       rnix-lsp
       spotify
-      tdesktop
 
       # GNOME Extensions
       appindicator

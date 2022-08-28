@@ -37,7 +37,6 @@
         "bitwarden.desktop" # Bitwarden
         "discord.desktop" # Discord
         "element-desktop.desktop" # Element
-        "telegramdesktop.desktop" # Telegram
         "spotify.desktop" # Spotify
         "steam.desktop" # Steam
         "minecraft-launcher.desktop" # Minecraft
