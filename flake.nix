@@ -4,17 +4,18 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
+    flake-utils.url = "github:numtide/flake-utils";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        utils.follows = "flake-utils";
+      };
     };
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, ... }:
-    let
-      pkgs = nixpkgs.legacyPackages."x86_64-linux";
-    in
+  outputs = { nixpkgs, nixos-hardware, home-manager, flake-utils, ... }:
     {
       nixosConfigurations = {
         # Acer Swift 3 (SF314-52)
@@ -43,21 +44,29 @@
         # };
       };
 
-      homeConfigurations = {
-        federico = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
+    } // flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" ] (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+      {
+        homeConfigurations = {
+          # Personal account.
+          federico = home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
 
-          modules = [
-            ./users/federico/home.nix
-          ];
+            modules = [
+              ./users/federico/home.nix
+            ];
+          };
         };
-      };
 
-      devShells."x86_64-linux".default = pkgs.mkShell {
-        buildInputs = with pkgs; [
-          rnix-lsp
-          nixpkgs-fmt
-        ];
-      };
-    };
+        devShells.default = pkgs.mkShell
+          {
+            buildInputs = with pkgs; [
+              rnix-lsp
+              nixpkgs-fmt
+            ];
+          };
+      }
+    );
 }

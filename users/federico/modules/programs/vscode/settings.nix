@@ -1,0 +1,62 @@
+{
+  programs.vscode.userSettings = {
+    "[markdown]" = {
+      "editor.defaultFormatter" = "yzhang.markdown-all-in-one";
+    };
+    "cmake.configureOnOpen" = true;
+    "cmake.generator" = "Ninja";
+    "diffEditor.ignoreTrimWhitespace" = false;
+    "discord.suppressNotifications" = true;
+    "editor.fontFamily" = "'Cascadia Code', 'Droid Sans Mono', monospace";
+    "editor.fontLigatures" = true;
+    "editor.formatOnSave" = true;
+    "editor.minimap.renderCharacters" = false;
+    "editor.renderWhitespace" = "trailing";
+    "evenBetterToml.semanticTokens" = true;
+    "explorer.confirmDragAndDrop" = false;
+    "files.associations" = { "LICENSE*" = "plaintext"; };
+    "files.insertFinalNewline" = true;
+    "files.trimFinalNewlines" = true;
+    "files.trimTrailingWhitespace" = true;
+    "git.alwaysSignOff" = true;
+    "git.autofetch" = true;
+    "git.confirmSync" = false;
+    "git.enableCommitSigning" = true;
+    "git.fetchOnPull" = true;
+    "git.showCommitInput" = false;
+    "git.showPushSuccessNotification" = true;
+    "git.supportCancellation" = true;
+    "git.timeline.showUncommitted" = true;
+    "git.verboseCommit" = true;
+    "github.gitProtocol" = "ssh";
+    "go.inlayHints.assignVariableTypes" = true;
+    "go.inlayHints.compositeLiteralFields" = true;
+    "go.inlayHints.compositeLiteralTypes" = true;
+    "go.inlayHints.constantValues" = true;
+    "go.inlayHints.functionTypeParameters" = true;
+    "go.inlayHints.parameterNames" = true;
+    "go.inlayHints.rangeVariableTypes" = true;
+    "go.lintTool" = "golangci-lint";
+    "go.toolsManagement.autoUpdate" = true;
+    "gopls" = {
+      "formatting.gofumpt" = true;
+      "ui.semanticTokens" = true;
+    };
+    "license.author" = "Federico Damián Schonborn <fdschonborn@gmail.com>";
+    "license.default" = "mit";
+    "license.extension" = "";
+    "license.year" = "auto";
+    "nix.enableLanguageServer" = true;
+    "remote.containers.dockerComposePath" = "podman-compose";
+    "remote.containers.dockerPath" = "podman";
+    "rust-analyzer.checkOnSave.command" = "clippy";
+    "rust-analyzer.imports.prefix" = "crate";
+    "window.autoDetectColorScheme" = true;
+    "window.commandCenter" = true;
+    "window.titleBarStyle" = "custom";
+    "workbench.colorTheme" = "Gruvbox Light Medium";
+    "workbench.iconTheme" = "file-icons";
+    "workbench.preferredDarkColorTheme" = "Gruvbox Dark Medium";
+    "workbench.preferredLightColorTheme" = "Gruvbox Light Medium";
+  };
+}
