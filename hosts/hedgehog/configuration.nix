@@ -17,6 +17,7 @@
     ./modules/services.nix
     ./modules/users.nix
     ./modules/virtualisation.nix
+    ./modules/zram-swap.nix
   ];
 
   # This value determines the NixOS release from which the default
