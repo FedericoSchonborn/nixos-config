@@ -66,6 +66,9 @@
               rnix-lsp
               nixpkgs-fmt
             ];
+            shellHook = ''
+              nixpkgs-fmt --version
+            '';
           };
       }
     );
