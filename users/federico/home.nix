@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./modules/dconf.nix
     ./modules/home.nix
     ./modules/programs.nix
   ];
