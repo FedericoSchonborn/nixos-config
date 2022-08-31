@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:nixos/nixos-hardware/master";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
     flake-utils.url = "github:numtide/flake-utils";
 
     home-manager = {
@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, flake-utils, ... }:
+  outputs = { nixpkgs, nixos-hardware, flake-utils, home-manager, ... }:
     {
       nixosConfigurations = {
         # Acer Swift 3 (SF314-52)
