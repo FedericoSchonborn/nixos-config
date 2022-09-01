@@ -15,7 +15,13 @@
     };
   };
 
-  outputs = { nixpkgs, nixos-hardware, flake-utils, home-manager, ... }:
+  outputs = {
+    nixpkgs,
+    nixos-hardware,
+    flake-utils,
+    home-manager,
+    ...
+  }:
     {
       nixosConfigurations = {
         # Acer Swift 3 (SF314-52)
@@ -42,12 +48,11 @@
         #   ];
         # };
       };
-
-    } // flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" ] (system:
-      let
+    }
+    // flake-utils.lib.eachSystem ["x86_64-linux" "aarch64-linux"] (
+      system: let
         pkgs = nixpkgs.legacyPackages.${system};
-      in
-      {
+      in {
         homeConfigurations = {
           # Personal account.
           federico = home-manager.lib.homeManagerConfiguration {
@@ -58,16 +63,13 @@
           };
         };
 
-        devShells.default = pkgs.mkShell
-          {
-            buildInputs = with pkgs; [
-              rnix-lsp
-              nixpkgs-fmt
-            ];
-            shellHook = ''
-              nixpkgs-fmt --version
-            '';
-          };
+        devShells.default = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            rnix-lsp
+          ];
+        };
+
+        formatter = pkgs.alejandra;
       }
     );
 }

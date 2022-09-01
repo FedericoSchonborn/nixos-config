@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   dconf.settings = {
     "org/gnome/settings/daemon/plugins/power".sleep-inactive-ac-type = "nothing";
     "org/gnome/system/location".enabled = true;

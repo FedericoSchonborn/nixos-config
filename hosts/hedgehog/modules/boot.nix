@@ -1,16 +1,14 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./boot/loader.nix
   ];
 
   boot = {
-    extraModulePackages = [ ];
-    kernelModules = [ "kvm-intel" ];
+    extraModulePackages = [];
+    kernelModules = ["kvm-intel"];
     kernelPackages = pkgs.linuxPackages_latest;
     plymouth.enable = true;
-    supportedFilesystems = [ "ntfs" "exfat" ];
+    supportedFilesystems = ["ntfs" "exfat"];
 
     initrd = {
       availableKernelModules = [

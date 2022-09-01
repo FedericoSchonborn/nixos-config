@@ -14,7 +14,7 @@
     "editor.renderWhitespace" = "trailing";
     "evenBetterToml.semanticTokens" = true;
     "explorer.confirmDragAndDrop" = false;
-    "files.associations" = { "LICENSE*" = "plaintext"; };
+    "files.associations" = {"LICENSE*" = "plaintext";};
     "files.insertFinalNewline" = true;
     "files.trimFinalNewlines" = true;
     "files.trimTrailingWhitespace" = true;
@@ -47,6 +47,7 @@
     "license.extension" = "";
     "license.year" = "auto";
     "nix.enableLanguageServer" = true;
+    "nix.formatterPath" = ["nix" "fmt" "--" "-"];
     "remote.containers.dockerComposePath" = "podman-compose";
     "remote.containers.dockerPath" = "podman";
     "rust-analyzer.checkOnSave.command" = "clippy";

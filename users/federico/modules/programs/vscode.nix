@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./vscode/extensions.nix
     ./vscode/keybindings.nix

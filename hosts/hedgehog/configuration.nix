@@ -1,6 +1,4 @@
-{ modulesPath, ... }:
-
-{
+{modulesPath, ...}: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     ./modules/boot.nix
