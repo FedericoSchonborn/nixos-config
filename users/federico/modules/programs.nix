@@ -7,5 +7,7 @@
   ];
 
   programs.bash.enable = true;
+  programs.helix.enable = true;
   programs.home-manager.enable = true;
+  programs.zellij.enable = true;
 }
