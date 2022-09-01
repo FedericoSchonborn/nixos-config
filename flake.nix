@@ -28,7 +28,6 @@
             nixos-hardware.nixosModules.common-pc-laptop
             nixos-hardware.nixosModules.common-pc-laptop-ssd
             home-manager.nixosModules.home-manager
-
             # Configuration files
             ./hosts/hedgehog/configuration.nix
             ./users/federico/configuration.nix
@@ -53,7 +52,6 @@
           # Personal account.
           federico = home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
-
             modules = [
               ./users/federico/home.nix
             ];
