@@ -23,6 +23,7 @@
       gnomeExtensions.desktop-icons-ng-ding
       gnomeExtensions.dash-to-panel
       gnomeExtensions.sound-output-device-chooser
+      gnomeExtensions.tiling-assistant
     ];
   };
 }

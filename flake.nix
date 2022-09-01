@@ -13,19 +13,9 @@
         utils.follows = "flake-utils";
       };
     };
-
-    helix = {
-      url = "github:helix-editor/helix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    zellij = {
-      url = "github:zellij-org/zellij";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, flake-utils, home-manager, helix, zellij, ... }:
+  outputs = { nixpkgs, nixos-hardware, flake-utils, home-manager, ... }:
     {
       nixosConfigurations = {
         # Acer Swift 3 (SF314-52)
@@ -54,21 +44,16 @@
         # };
       };
 
-      overlays.helix = final: prev: {
-        helix = helix.packages.${prev.system}.default;
-      };
     } // flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" ] (system:
       let
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = [ self.overlays.helix zellij.overlays.default ];
-        };
+        pkgs = nixpkgs.legacyPackages.${system};
       in
       {
         homeConfigurations = {
           # Personal account.
           federico = home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
+
             modules = [
               ./users/federico/home.nix
             ];

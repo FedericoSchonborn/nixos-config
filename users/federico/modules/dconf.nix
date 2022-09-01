@@ -26,6 +26,7 @@
         desktop-icons-ng-ding.extensionUuid
         dash-to-panel.extensionUuid
         sound-output-device-chooser.extensionUuid
+        tiling-assistant.extensionUuid
       ];
 
       favorite-apps = [
