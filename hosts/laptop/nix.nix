@@ -5,8 +5,5 @@
     settings.experimental-features = ["nix-command" "flakes"];
   };
 
-  nixpkgs = {
-    config.allowUnfree = true;
-    hostPlatform = "x86_64-linux";
-  };
+  nixpkgs.config.allowUnfree = true;
 }

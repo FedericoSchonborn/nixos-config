@@ -1,6 +1,6 @@
 {
   networking = {
-    hostName = "hedgehog";
+    hostName = "laptop";
 
     networkmanager = {
       enable = true;

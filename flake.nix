@@ -28,7 +28,7 @@
     {
       nixosConfigurations = {
         # Acer Swift 3 (SF314-52)
-        hedgehog = nixosSystem {
+        laptop = nixosSystem {
           system = "x86_64-linux";
           modules = [
             # Modules
@@ -38,18 +38,21 @@
             nixos-hardware.nixosModules.common-pc-laptop-ssd
             home-manager.nixosModules.home-manager
             # Configuration files
-            ./hosts/hedgehog
+            ./hosts/laptop
             ./users/federico
           ];
         };
 
         # Raspberry Pi 4 Model B (1GB)
-        # echidna = nixosSystem {
-        #   system = "aarch64-linux";
-        #   modules = [
-        #     ./hosts/echidna/configuration.nix
-        #   ];
-        # };
+        pi = nixosSystem {
+          system = "aarch64-linux";
+          modules = [
+            nixos-hardware.nixosModules.raspberry-pi-4
+            home-manager.nixosModules.home-manager
+            ./hosts/pi
+            ./users/pi
+          ];
+        };
       };
     }
     // eachSystem [
