@@ -4,10 +4,27 @@
   ...
 }: {
   imports = [
-    ./modules/dconf.nix
-    ./modules/home.nix
-    ./modules/programs.nix
+    ./programs
   ];
+
+  home = {
+    username = "federico";
+    homeDirectory = "/home/federico";
+
+    # Packages that should be installed to the user profile.
+    packages = with pkgs; [
+      bitwarden
+      discord
+      element-desktop
+      firefox
+      gimp
+      github-desktop
+      inkscape
+      libreoffice-fresh
+      minecraft
+      spotify
+    ];
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

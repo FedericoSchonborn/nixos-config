@@ -1,21 +1,21 @@
 {modulesPath, ...}: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    ./modules/boot.nix
-    ./modules/desktop.nix
-    ./modules/environment.nix
-    ./modules/file-systems.nix
-    ./modules/hardware.nix
-    ./modules/i18n.nix
-    ./modules/networking.nix
-    ./modules/nix.nix
-    ./modules/power-management.nix
-    ./modules/programs.nix
-    ./modules/security.nix
-    ./modules/services.nix
-    ./modules/users.nix
-    ./modules/virtualisation.nix
-    ./modules/zram-swap.nix
+    ./boot
+    ./desktop.nix
+    ./environment.nix
+    ./file-systems.nix
+    ./hardware.nix
+    ./i18n.nix
+    ./networking.nix
+    ./nix.nix
+    ./power-management.nix
+    ./programs
+    ./security.nix
+    ./services
+    ./users.nix
+    ./virtualisation.nix
+    ./zram-swap.nix
   ];
 
   # This value determines the NixOS release from which the default

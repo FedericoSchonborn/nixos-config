@@ -17,7 +17,6 @@
       };
       init = {defaultBranch = "main";};
       push = {gpgSign = "if-asked";};
-      tag = {gpgSign = "true";};
       format = {signOff = "true";};
     };
   };

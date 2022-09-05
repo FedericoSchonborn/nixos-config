@@ -1,7 +1,7 @@
 {
   imports = [
-    ./programs/gnupg.nix
-    ./programs/steam.nix
+    ./gnupg.nix
+    ./steam.nix
   ];
 
   programs = {

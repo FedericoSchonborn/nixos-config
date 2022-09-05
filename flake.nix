@@ -21,11 +21,14 @@
     flake-utils,
     home-manager,
     ...
-  }:
+  }: let
+    inherit (nixpkgs.lib) nixosSystem;
+    inherit (flake-utils.lib) eachSystem system;
+  in
     {
       nixosConfigurations = {
         # Acer Swift 3 (SF314-52)
-        hedgehog = nixpkgs.lib.nixosSystem {
+        hedgehog = nixosSystem {
           system = "x86_64-linux";
           modules = [
             # Modules
@@ -35,13 +38,13 @@
             nixos-hardware.nixosModules.common-pc-laptop-ssd
             home-manager.nixosModules.home-manager
             # Configuration files
-            ./hosts/hedgehog/configuration.nix
-            ./users/federico/configuration.nix
+            ./hosts/hedgehog
+            ./users/federico
           ];
         };
 
         # Raspberry Pi 4 Model B (1GB)
-        # echidna = nixpkgs.lib.nixosSystem {
+        # echidna = nixosSystem {
         #   system = "aarch64-linux";
         #   modules = [
         #     ./hosts/echidna/configuration.nix
@@ -49,20 +52,14 @@
         # };
       };
     }
-    // flake-utils.lib.eachSystem ["x86_64-linux" "aarch64-linux"] (
+    // eachSystem [
+      system.x86_64-linux
+      system.aarch64-linux
+    ]
+    (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in {
-        homeConfigurations = {
-          # Personal account.
-          federico = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            modules = [
-              ./users/federico/home.nix
-            ];
-          };
-        };
-
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
             rnix-lsp

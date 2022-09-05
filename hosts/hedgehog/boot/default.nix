@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ./boot/loader.nix
+    ./loader.nix
   ];
 
   boot = {

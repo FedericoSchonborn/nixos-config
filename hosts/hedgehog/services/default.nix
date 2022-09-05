@@ -1,7 +1,7 @@
 {
   imports = [
-    ./services/pipewire.nix
-    ./services/xserver.nix
+    ./pipewire.nix
+    ./xserver.nix
   ];
 
   services.printing.enable = true;

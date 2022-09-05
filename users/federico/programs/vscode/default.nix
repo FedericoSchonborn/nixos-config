@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   imports = [
-    ./vscode/extensions.nix
-    ./vscode/keybindings.nix
-    ./vscode/settings.nix
+    ./extensions.nix
+    ./keybindings.nix
+    ./settings.nix
   ];
 
   programs.vscode = {
