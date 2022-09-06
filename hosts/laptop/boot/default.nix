@@ -4,6 +4,7 @@
   ];
 
   boot = {
+    binfmt.emulatedSystems = ["aarch64-linux"];
     extraModulePackages = [];
     kernelModules = ["kvm-intel"];
     kernelPackages = pkgs.linuxPackages_latest;
