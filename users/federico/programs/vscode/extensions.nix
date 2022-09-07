@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.vscode.extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     {
       # Spanish - Code Spell Checker
@@ -166,7 +166,7 @@
       name = "rust-analyzer";
       publisher = "rust-lang";
       version = "0.4.1185";
-      sha256 = "LA+EIJMuJE40ISoq5g9X9pa58dfljxJIb6xJSojKVwU=";
+      sha256 = "kQ2m/CPbA7qJl4tF2vM8j+8EV+YpH/d7FS6qdYeWOS0=";
     }
     {
       # ShellCheck
