@@ -4,21 +4,21 @@
   ];
 
   boot = {
-    binfmt.emulatedSystems = ["aarch64-linux"];
-    kernelModules = ["kvm-intel"];
+    kernelModules = ["kvm-amd"];
     kernelPackages = pkgs.linuxPackages_latest;
     plymouth.enable = true;
     supportedFilesystems = ["ntfs" "exfat"];
 
     initrd = {
       availableKernelModules = [
-        "xhci_pci"
         "ahci"
-        "usbhid"
-        "uas"
+        "ohci_pci"
+        "ehci_pci"
         "usb_storage"
+        "ums_realtek"
+        "usbhid"
         "sd_mod"
-        "rtsx_usb_sdmmc"
+        "sr_mod"
       ];
     };
   };

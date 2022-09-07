@@ -1,5 +1,5 @@
 {
-  users.mutableUsers = false;
+  users.mutableUsers = true;
 
   home-manager = {
     useGlobalPkgs = true;

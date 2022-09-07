@@ -1,8 +1,11 @@
-{
+{modulesPath, ...}: {
   imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+    ./environment.nix
+    ./fonts.nix
     ./networking.nix
-    ./services
     ./nix.nix
+    ./services
     ./users.nix
   ];
 
