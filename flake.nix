@@ -28,18 +28,30 @@
     {
       nixosConfigurations = {
         # Acer Swift 3 (SF314-52)
-        laptop = nixosSystem {
+        swift = nixosSystem {
           system = "x86_64-linux";
           modules = [
-            # Modules
             nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
             nixos-hardware.nixosModules.common-gpu-intel
             nixos-hardware.nixosModules.common-pc-laptop
             nixos-hardware.nixosModules.common-pc-laptop-ssd
             home-manager.nixosModules.home-manager
-            # Configuration files
-            ./hosts/laptop
+            ./hosts/swift
             ./users/federico
+          ];
+        };
+
+        # Gateway AiO ZX4250
+        zx4250 = nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            nixos-hardware.nixosModules.common-cpu-amd
+            nixos-hardware.nixosModules.common-gpu-amd
+            nixos-hardware.nixosModules.common-pc
+            nixos-hardware.nixosModules.common-pc-hdd
+            home-manager.nixosModules.home-manager
+            ./hosts/zx4250
+            ./users/casa
           ];
         };
 
@@ -63,12 +75,7 @@
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in {
-        devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            rnix-lsp
-          ];
-        };
-
+        devShells.default = pkgs.mkShell {};
         formatter = pkgs.alejandra;
       }
     );
