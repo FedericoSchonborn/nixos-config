@@ -22,6 +22,7 @@
       inkscape
       libreoffice-fresh
       minecraft
+      rnix-lsp
       spotify
     ];
   };

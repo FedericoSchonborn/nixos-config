@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.vscode.extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     {
       # Spanish - Code Spell Checker
