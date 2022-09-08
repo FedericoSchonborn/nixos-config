@@ -13,6 +13,14 @@
         utils.follows = "flake-utils";
       };
     };
+
+    budgie-overlay = {
+      url = "github:FedericoSchonborn/budgie-overlay";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
+    };
   };
 
   outputs = {
@@ -20,6 +28,7 @@
     nixos-hardware,
     flake-utils,
     home-manager,
+    budgie-overlay,
     ...
   }: let
     inherit (nixpkgs.lib) nixosSystem;
@@ -38,6 +47,24 @@
             home-manager.nixosModules.home-manager
             ./hosts/swift
             ./users/federico
+            ./modules/desktop/plasma
+          ];
+        };
+
+        # Acer Swift 3 (SF314-52) + Budgie Desktop
+        swift-budgie = nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
+            nixos-hardware.nixosModules.common-gpu-intel
+            nixos-hardware.nixosModules.common-pc-laptop
+            nixos-hardware.nixosModules.common-pc-laptop-ssd
+            home-manager.nixosModules.home-manager
+            budgie-overlay.nixosModules.default
+            {nixpkgs.overlays = [budgie-overlay.overlays.default];}
+            ./hosts/swift
+            ./users/federico
+            ./modules/desktop/budgie
           ];
         };
 
@@ -52,6 +79,7 @@
             home-manager.nixosModules.home-manager
             ./hosts/zx4250
             ./users/casa
+            ./modules/desktop/xfce
           ];
         };
 
