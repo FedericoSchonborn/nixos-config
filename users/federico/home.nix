@@ -13,6 +13,7 @@
       discord
       element-desktop
       firefox
+      thunderbird
       gimp
       github-desktop
       inkscape
@@ -20,6 +21,7 @@
       minecraft
       rnix-lsp
       spotify
+      lapce
     ];
   };
 
