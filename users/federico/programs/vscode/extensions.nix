@@ -120,13 +120,6 @@
       sha256 = "ldD907spPCgHQ10XphaRAbgkNcYdzACqUOr2Cf5o8zU=";
     }
     {
-      # Nix Env Selector
-      name = "nix-env-selector";
-      publisher = "arrterian";
-      version = "1.0.9";
-      sha256 = "TkxqWZ8X+PAonzeXQ+sI9WI+XlqUHll7YyM7N9uErk0=";
-    }
-    {
       # Nix IDE
       name = "nix-ide";
       publisher = "jnoortheen";
