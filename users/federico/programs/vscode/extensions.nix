@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.vscode.extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     {
       # Spanish - Code Spell Checker
@@ -140,12 +140,26 @@
       version = "2.8.1";
       sha256 = "lTKzMphkGgOG2XWqz3TW2G9sISBc/kG7oXqcIH8l+Mg=";
     }
+
+    {
+      # GitHub Repositories
+      name = "remotehub";
+      publisher = "github";
+      version = "0.42.0";
+      sha256 = "zHwuxr21pZgD4Mo1v1eE0be6X5yy/fGMlV7SKhwwcPk=";
+    }
     {
       # Remote - Containers
       name = "remote-containers";
       publisher = "ms-vscode-remote";
       version = "0.245.0";
       sha256 = "j+68VfycQDtcv2MP5ZJjjHuAV8sC24VimUIDB7KwJkI=";
+    }
+    {
+      name = "remote-repositories";
+      publisher = "ms-vscode";
+      version = "0.20.0";
+      sha256 = "ugwqBGK0Ee7T3VJsVHDA8cLzks0uvDQHLPw5Fvf7tOM=";
     }
     {
       # Remote - SSH: Edition Configuration Files
