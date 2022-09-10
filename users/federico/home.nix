@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./programs
+    ./services
   ];
 
   home = {
@@ -13,15 +14,16 @@
       discord
       element-desktop
       firefox
-      thunderbird
       gimp
       github-desktop
       inkscape
+      keepassxc
+      lapce
       libreoffice-fresh
       minecraft
       rnix-lsp
       spotify
-      lapce
+      thunderbird
     ];
   };
 
