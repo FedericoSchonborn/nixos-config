@@ -30,14 +30,11 @@
     home-manager,
     budgie-overlay,
     ...
-  }: let
-    inherit (nixpkgs.lib) nixosSystem;
-    inherit (flake-utils.lib) eachSystem system;
-  in
+  }:
     {
       nixosConfigurations = {
         # Acer Swift 3 (SF314-52)
-        swift = nixosSystem {
+        swift = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
@@ -52,7 +49,7 @@
         };
 
         # Acer Swift 3 (SF314-52) + Budgie Desktop
-        swift-budgie = nixosSystem {
+        swift-budgie = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
@@ -69,7 +66,7 @@
         };
 
         # Gateway AiO ZX4250
-        zx4250 = nixosSystem {
+        zx4250 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             nixos-hardware.nixosModules.common-cpu-amd
@@ -84,7 +81,7 @@
         };
 
         # Raspberry Pi 4 Model B (1GB)
-        pi = nixosSystem {
+        pi = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
           modules = [
             nixos-hardware.nixosModules.raspberry-pi-4
@@ -95,15 +92,11 @@
         };
       };
     }
-    // eachSystem [
-      system.x86_64-linux
-      system.aarch64-linux
-    ]
+    // flake-utils.lib.eachDefaultSystem
     (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in {
-        devShells.default = pkgs.mkShell {};
         formatter = pkgs.alejandra;
       }
     );
