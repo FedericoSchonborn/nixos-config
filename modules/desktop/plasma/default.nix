@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   services.xserver = {
     desktopManager.plasma5 = {
       enable = true;
@@ -10,4 +10,10 @@
       sddm.enable = true;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    kate
+  ];
+
+  programs.kdeconnect.enable = true;
 }
