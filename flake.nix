@@ -3,8 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:NixOS/nixos-hardware";
     flake-utils.url = "github:numtide/flake-utils";
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -13,14 +13,9 @@
         utils.follows = "flake-utils";
       };
     };
-
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
   };
 
-  outputs = { nixpkgs, nixos-hardware, flake-utils, home-manager, ... }:
+  outputs = { nixpkgs, flake-utils, nixos-hardware, home-manager, ... }:
     {
       nixosConfigurations = {
         # Acer Swift 3 (SF314-52)
