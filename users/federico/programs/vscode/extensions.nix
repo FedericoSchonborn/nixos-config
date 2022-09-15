@@ -12,8 +12,6 @@
       golang.go # Go
       jdinhlife.gruvbox # Gruvbox Theme
       yzhang.markdown-all-in-one # Markdown All in One
-      bierner.markdown-checkbox # Markdown Checkboxes
-      bierner.markdown-emoji # Markdown Emoji
       jnoortheen.nix-ide # Nix IDE
       christian-kohler.path-intellisense # Path Intellisense
       ms-vscode-remote.remote-ssh # Remote - SSH
@@ -47,27 +45,6 @@
         publisher = "jamesottaway";
         version = "0.0.1";
         sha256 = "ldD907spPCgHQ10XphaRAbgkNcYdzACqUOr2Cf5o8zU=";
-      }
-      {
-        # GitHub Repositories
-        name = "remotehub";
-        publisher = "github";
-        version = "0.42.0";
-        sha256 = "zHwuxr21pZgD4Mo1v1eE0be6X5yy/fGMlV7SKhwwcPk=";
-      }
-      {
-        # Remote - Containers
-        name = "remote-containers";
-        publisher = "ms-vscode-remote";
-        version = "0.245.0";
-        sha256 = "j+68VfycQDtcv2MP5ZJjjHuAV8sC24VimUIDB7KwJkI=";
-      }
-      {
-        # Remote Repositories
-        name = "remote-repositories";
-        publisher = "ms-vscode";
-        version = "0.20.0";
-        sha256 = "ugwqBGK0Ee7T3VJsVHDA8cLzks0uvDQHLPw5Fvf7tOM=";
       }
       {
         # Remote - SSH: Edit Configuration Files
