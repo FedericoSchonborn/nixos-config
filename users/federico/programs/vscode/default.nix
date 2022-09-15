@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  readJSON = path: builtins.fromJSON (builtins.readFile path);
+in
 {
   imports = [
     ./extensions.nix
@@ -8,7 +11,7 @@
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = false;
-    userSettings = (builtins.fromJSON (builtins.readFile ./settings.json));
-    keybindings = (builtins.fromJSON (builtins.readFile ./keybindings.json));
+    userSettings = readJSON ./settings.json;
+    keybindings = readJSON ./keybindings.json;
   };
 }

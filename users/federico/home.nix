@@ -20,7 +20,6 @@
       github-desktop
       inkscape
       keepassxc
-      lapce
       libreoffice-fresh
       minecraft
       rnix-lsp
