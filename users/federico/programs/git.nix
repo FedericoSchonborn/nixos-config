@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+
+{
   programs.git = {
     enable = true;
     package = pkgs.gitFull;
@@ -12,12 +14,10 @@
     };
 
     extraConfig = {
-      core = {
-        editor = "nano -cl"; # Nano + line numbers + cursor position.
-      };
-      init = {defaultBranch = "main";};
-      push = {gpgSign = "if-asked";};
-      format = {signOff = "true";};
+      core.editor = "nano -cl"; # Nano + line numbers + cursor position.
+      init.defaultBranch = "main";
+      push.gpgSign = "if-asked";
+      form.signOff = "true";
     };
   };
 }

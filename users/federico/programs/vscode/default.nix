@@ -1,12 +1,14 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+
+{
   imports = [
     ./extensions.nix
-    ./keybindings.nix
-    ./settings.nix
   ];
 
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = false;
+    userSettings = (builtins.fromJSON (builtins.readFile ./settings.json));
+    keybindings = (builtins.fromJSON (builtins.readFile ./keybindings.json));
   };
 }

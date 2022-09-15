@@ -1,4 +1,6 @@
-{modulesPath, ...}: {
+{ modulesPath, ... }:
+
+{
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     ./boot
@@ -10,6 +12,7 @@
     ./i18n.nix
     ./networking.nix
     ./nix.nix
+    ./services
     ./users.nix
     ./zram-swap.nix
   ];

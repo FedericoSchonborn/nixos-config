@@ -2,8 +2,8 @@
   description = "NixOS configuration files";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:nixos/nixos-hardware";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
     flake-utils.url = "github:numtide/flake-utils";
 
     home-manager = {
@@ -14,28 +14,13 @@
       };
     };
 
-    budgie-overlay = {
-      url = "github:FedericoSchonborn/budgie-overlay";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
-      };
-    };
-
     flake-compat = {
       url = "github:edolstra/flake-compat";
       flake = false;
     };
   };
 
-  outputs = {
-    nixpkgs,
-    nixos-hardware,
-    flake-utils,
-    home-manager,
-    budgie-overlay,
-    ...
-  }:
+  outputs = { nixpkgs, nixos-hardware, flake-utils, home-manager, ... }:
     {
       nixosConfigurations = {
         # Acer Swift 3 (SF314-52)
@@ -49,24 +34,6 @@
             home-manager.nixosModules.home-manager
             ./hosts/swift
             ./users/federico
-            ./modules/desktop/plasma
-          ];
-        };
-
-        # Acer Swift 3 (SF314-52) + Budgie Desktop
-        swift-budgie = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
-            nixos-hardware.nixosModules.common-gpu-intel
-            nixos-hardware.nixosModules.common-pc-laptop
-            nixos-hardware.nixosModules.common-pc-laptop-ssd
-            home-manager.nixosModules.home-manager
-            budgie-overlay.nixosModules.default
-            {nixpkgs.overlays = [budgie-overlay.overlays.default];}
-            ./hosts/swift
-            ./users/federico
-            ./modules/desktop/budgie
           ];
         };
 
@@ -81,7 +48,6 @@
             home-manager.nixosModules.home-manager
             ./hosts/zx4250
             ./users/casa
-            ./modules/desktop/xfce
           ];
         };
 
@@ -96,13 +62,12 @@
           ];
         };
       };
-    }
-    // flake-utils.lib.eachDefaultSystem
-    (
-      system: let
+    } // flake-utils.lib.eachDefaultSystem (system:
+      let
         pkgs = nixpkgs.legacyPackages.${system};
-      in {
-        formatter = pkgs.alejandra;
+      in
+      {
+        formatter = pkgs.nixpkgs-fmt;
       }
     );
 }

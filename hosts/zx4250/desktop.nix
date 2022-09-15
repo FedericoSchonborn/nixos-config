@@ -1,9 +1,6 @@
 {
   services.xserver = {
-    enable = true;
-    displayManager.autoLogin = {
-      enable = true;
-      user = "casa";
-    };
+    desktopManager.xfce.enable = true;
+    displayManager.lightdm.greeters.slick.enable = true;
   };
 }
