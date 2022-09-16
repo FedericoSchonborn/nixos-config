@@ -4,6 +4,8 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     ./boot
+    ./services
+
     ./desktop.nix
     ./environment.nix
     ./file-systems.nix
@@ -12,8 +14,6 @@
     ./i18n.nix
     ./networking.nix
     ./nix.nix
-    ./services
-    ./users.nix
     ./zram-swap.nix
   ];
 

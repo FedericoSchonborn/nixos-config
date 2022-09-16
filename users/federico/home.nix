@@ -12,19 +12,18 @@
 
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
-      bitwarden
       discord
       element-desktop
       firefox
       gimp
-      github-desktop
       inkscape
       keepassxc
       libreoffice-fresh
       minecraft
-      rnix-lsp
       spotify
       thunderbird
+      rnix-lsp
+      nixpkgs-fmt
     ];
   };
 

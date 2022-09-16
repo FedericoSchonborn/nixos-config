@@ -3,18 +3,21 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+
     ./boot
+    ./programs
+    ./services
+
+    ./desktop.nix
     ./environment.nix
     ./file-systems.nix
+    ./fonts.nix
     ./hardware.nix
     ./i18n.nix
     ./networking.nix
     ./nix.nix
     ./power-management.nix
-    ./programs
     ./security.nix
-    ./services
-    ./users.nix
     ./virtualisation.nix
     ./zram-swap.nix
   ];

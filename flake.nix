@@ -16,6 +16,16 @@
   };
 
   outputs = { nixpkgs, flake-utils, nixos-hardware, home-manager, ... }:
+    let
+      sharedUserConfig = {
+        users.mutableUsers = false;
+
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+        };
+      };
+    in
     {
       nixosConfigurations = {
         # Acer Swift 3 (SF314-52)
@@ -27,6 +37,7 @@
             nixos-hardware.nixosModules.common-pc-laptop
             nixos-hardware.nixosModules.common-pc-laptop-ssd
             home-manager.nixosModules.home-manager
+            sharedUserConfig
             ./hosts/swift
             ./users/federico
           ];
@@ -41,6 +52,7 @@
             nixos-hardware.nixosModules.common-pc
             nixos-hardware.nixosModules.common-pc-hdd
             home-manager.nixosModules.home-manager
+            sharedUserConfig
             ./hosts/zx4250
             ./users/casa
           ];
@@ -52,6 +64,7 @@
           modules = [
             nixos-hardware.nixosModules.raspberry-pi-4
             home-manager.nixosModules.home-manager
+            sharedUserConfig
             ./hosts/pi
             ./users/pi
           ];

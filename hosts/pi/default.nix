@@ -3,12 +3,12 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+    ./services
+
     ./environment.nix
     ./fonts.nix
     ./networking.nix
     ./nix.nix
-    ./services
-    ./users.nix
   ];
 
   # This value determines the NixOS release from which the default
