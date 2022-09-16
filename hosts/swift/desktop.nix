@@ -15,6 +15,7 @@
 
   environment.systemPackages = with pkgs; [
     kate
+    vlc
   ];
 
   programs.kdeconnect.enable = true;
