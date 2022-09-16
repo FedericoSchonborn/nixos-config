@@ -14,6 +14,11 @@
       };
     };
 
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-on-droid = {
       url = "github:t184256/nix-on-droid";
       inputs = {
@@ -24,7 +29,15 @@
     };
   };
 
-  outputs = { nixpkgs, flake-utils, nixos-hardware, home-manager, nix-on-droid, ... }:
+  outputs =
+    { nixpkgs
+    , flake-utils
+    , nixos-hardware
+    , home-manager
+    , nixos-generators
+    , nix-on-droid
+    , ...
+    }:
     {
       nixosConfigurations = {
         # Acer Swift 3 (SF314-52)
@@ -74,12 +87,25 @@
           system = "aarch64-linux";
         };
       };
+
+      packages.x86_64-linux = {
+        pi4b-sd = nixos-generators.nixosGenerate {
+          system = "aarch64-linux";
+          modules = [
+            nixos-hardware.nixosModules.raspberry-pi-4
+            home-manager.nixosModules.home-manager
+            ./hosts/pi4b
+            ./users/pi
+          ];
+          format = "sd-aarch64";
+        };
+      };
     } // flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in
-      {
-        formatter = pkgs.nixpkgs-fmt;
-      }
+    let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
+    {
+      formatter = pkgs.nixpkgs-fmt;
+    }
     );
 }
