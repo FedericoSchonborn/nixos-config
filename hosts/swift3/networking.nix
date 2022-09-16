@@ -1,6 +1,6 @@
 {
   networking = {
-    hostName = "swift";
+    hostName = "swift3";
 
     networkmanager = {
       enable = true;
