@@ -1,4 +1,4 @@
-# nixos-config
+# Nix Config
 
 NixOS configuration files.
 
@@ -15,7 +15,7 @@ NixOS configuration files.
 # mount /dev/sda2 /mnt
 # mkdir /mnt/boot
 # mount /dev/sda1 /mnt/boot
-# git clone https://github.com/FedericoSchonborn/nixos-config
-# pushd nixos-config
+# git clone https://github.com/FedericoSchonborn/nix-config
+# pushd nix-config
 # nixos-install --flake .#swift3 --no-root-password
 ```
