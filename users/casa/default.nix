@@ -1,4 +1,8 @@
 {
+  imports = [
+    ../.
+  ];
+
   users.users.casa = {
     description = "Casa";
     extraGroups = [ "networkmanager" "wheel" ];

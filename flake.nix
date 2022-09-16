@@ -28,7 +28,6 @@
             nixos-hardware.nixosModules.common-pc-laptop-ssd
             home-manager.nixosModules.home-manager
             ./hosts/swift
-            ./users
             ./users/federico
           ];
         };
@@ -43,7 +42,6 @@
             nixos-hardware.nixosModules.common-pc-hdd
             home-manager.nixosModules.home-manager
             ./hosts/zx4250
-            ./users
             ./users/casa
           ];
         };
@@ -55,7 +53,6 @@
             nixos-hardware.nixosModules.raspberry-pi-4
             home-manager.nixosModules.home-manager
             ./hosts/pi
-            ./users
             ./users/pi
           ];
         };

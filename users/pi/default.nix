@@ -1,4 +1,8 @@
 {
+  imports = [
+    ../.
+  ];
+
   users.users.pi = {
     extraGroups = [ "wheel" ];
     isNormalUser = true;

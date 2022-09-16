@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ../.
+  ];
+
   users.users.federico = {
     description = "Federico Damián";
     extraGroups = [ "networkmanager" "wheel" ];
