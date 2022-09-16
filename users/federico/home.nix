@@ -6,6 +6,7 @@
 
     ./programs
     ./services
+    ./xdg.nix
   ];
 
   home = {
