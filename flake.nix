@@ -13,9 +13,18 @@
         utils.follows = "flake-utils";
       };
     };
+
+    nix-on-droid = {
+      url = "github:t184256/nix-on-droid";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+        home-manager.follows = "home-manager";
+      };
+    };
   };
 
-  outputs = { nixpkgs, flake-utils, nixos-hardware, home-manager, ... }:
+  outputs = { nixpkgs, flake-utils, nixos-hardware, home-manager, nix-on-droid, ... }:
     {
       nixosConfigurations = {
         # Acer Swift 3 (SF314-52)
@@ -55,6 +64,14 @@
             ./hosts/pi
             ./users/pi
           ];
+        };
+
+      };
+
+      nixOnDroidConfigurations = {
+        a32 = nix-on-droid.lib.nixOnDroidConfiguration {
+          config = ./hosts/a32;
+          system = "aarch64-linux";
         };
       };
     } // flake-utils.lib.eachDefaultSystem (system:
