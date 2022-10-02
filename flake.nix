@@ -69,15 +69,15 @@
         };
 
         # Raspberry Pi 4 Model B (1GB)
-        pi4b = nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
-          modules = [
-            nixos-hardware.nixosModules.raspberry-pi-4
-            home-manager.nixosModules.home-manager
-            ./hosts/pi4b
-            ./users/pi
-          ];
-        };
+        # pi4b = nixpkgs.lib.nixosSystem {
+        #   system = "aarch64-linux";
+        #   modules = [
+        #     nixos-hardware.nixosModules.raspberry-pi-4
+        #     home-manager.nixosModules.home-manager
+        #     ./hosts/pi4b
+        #     ./users/pi
+        #   ];
+        # };
       };
 
       nixOnDroidConfigurations = {
@@ -92,16 +92,16 @@
     in
     {
       packages = {
-        pi4b-sd = nixos-generators.nixosGenerate {
-          system = "aarch64-linux";
-          modules = [
-            nixos-hardware.nixosModules.raspberry-pi-4
-            home-manager.nixosModules.home-manager
-            ./hosts/pi4b
-            ./users/pi
-          ];
-          format = "sd-aarch64";
-        };
+        # pi4b-sd = nixos-generators.nixosGenerate {
+        #   system = "aarch64-linux";
+        #   modules = [
+        #     nixos-hardware.nixosModules.raspberry-pi-4
+        #     home-manager.nixosModules.home-manager
+        #     ./hosts/pi4b
+        #     ./users/pi
+        #   ];
+        #   format = "sd-aarch64";
+        # };
       };
 
       devShells.default = pkgs.mkShell { };
