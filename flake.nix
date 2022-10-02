@@ -2,12 +2,12 @@
   description = "NixOS configuration files";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         utils.follows = "flake-utils";
@@ -78,17 +78,20 @@
             ./users/pi
           ];
         };
-
       };
 
       nixOnDroidConfigurations = {
         a32 = nix-on-droid.lib.nixOnDroidConfiguration {
-          config = ./hosts/a32;
           system = "aarch64-linux";
+          config = ./hosts/a32;
         };
       };
-
-      packages.x86_64-linux = {
+    } // flake-utils.lib.eachDefaultSystem (system:
+    let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
+    {
+      packages = {
         pi4b-sd = nixos-generators.nixosGenerate {
           system = "aarch64-linux";
           modules = [
@@ -100,11 +103,8 @@
           format = "sd-aarch64";
         };
       };
-    } // flake-utils.lib.eachDefaultSystem (system:
-    let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
+
+      devShells.default = pkgs.mkShell { };
       formatter = pkgs.nixpkgs-fmt;
     }
     );

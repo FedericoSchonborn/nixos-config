@@ -1,6 +1,3 @@
 {
-  networking = {
-    hostName = "zx4250";
-    networkmanager.enable = true;
-  };
+  networking.hostName = "zx4250";
 }

@@ -7,7 +7,6 @@
 
   boot = {
     kernelModules = [ "kvm-amd" ];
-    kernelPackages = pkgs.linuxPackages_latest;
     plymouth.enable = true;
     supportedFilesystems = [ "ntfs" "exfat" ];
 
