@@ -41,7 +41,10 @@
     sharedModules = [
       home-manager.nixosModules.home-manager
       {
-        nix.registry.nixpkgs.flake = nixpkgs;
+        nix = {
+          registry.nixpkgs.flake = nixpkgs;
+          nixPath.nixpkgs = "${nixpkgs}";
+        };
       }
     ];
   in
