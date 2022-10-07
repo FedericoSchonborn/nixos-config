@@ -37,46 +37,56 @@
     nixos-generators,
     nix-on-droid,
     ...
-  }:
+  }: let
+    sharedModules = [
+      home-manager.nixosModules.home-manager
+      {
+        nix.registry.nixpkgs.flake = nixpkgs;
+      }
+    ];
+  in
     {
       nixosConfigurations = {
         # Acer Swift 3
         swift3 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [
-            nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
-            nixos-hardware.nixosModules.common-gpu-intel
-            nixos-hardware.nixosModules.common-pc-laptop
-            nixos-hardware.nixosModules.common-pc-laptop-ssd
-            home-manager.nixosModules.home-manager
-            ./hosts/swift3
-            ./users/federico
-          ];
+          modules =
+            [
+              nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
+              nixos-hardware.nixosModules.common-gpu-intel
+              nixos-hardware.nixosModules.common-pc-laptop
+              nixos-hardware.nixosModules.common-pc-laptop-ssd
+              ./hosts/swift3
+              ./users/federico
+            ]
+            ++ sharedModules;
         };
 
         # Gateway ZX4250
         zx4250 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [
-            nixos-hardware.nixosModules.common-cpu-amd
-            nixos-hardware.nixosModules.common-gpu-amd
-            nixos-hardware.nixosModules.common-pc
-            nixos-hardware.nixosModules.common-pc-hdd
-            home-manager.nixosModules.home-manager
-            ./hosts/zx4250
-            ./users/casa
-          ];
+          modules =
+            [
+              nixos-hardware.nixosModules.common-cpu-amd
+              nixos-hardware.nixosModules.common-gpu-amd
+              nixos-hardware.nixosModules.common-pc
+              nixos-hardware.nixosModules.common-pc-hdd
+              ./hosts/zx4250
+              ./users/casa
+            ]
+            ++ sharedModules;
         };
 
         # Raspberry Pi 4 Model B (1GB)
         pi4b = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
-          modules = [
-            nixos-hardware.nixosModules.raspberry-pi-4
-            home-manager.nixosModules.home-manager
-            ./hosts/pi4b
-            ./users/pi
-          ];
+          modules =
+            [
+              nixos-hardware.nixosModules.raspberry-pi-4
+              ./hosts/pi4b
+              ./users/pi
+            ]
+            ++ sharedModules;
         };
       };
 
@@ -92,15 +102,16 @@
         x86_64-linux = {
           zx4250-iso = nixos-generators.nixosGenerate {
             system = "x86_64-linux";
-            modules = [
-              nixos-hardware.nixosModules.common-cpu-amd
-              nixos-hardware.nixosModules.common-gpu-amd
-              nixos-hardware.nixosModules.common-pc
-              nixos-hardware.nixosModules.common-pc-hdd
-              home-manager.nixosModules.home-manager
-              ./hosts/zx4250
-              ./users/casa
-            ];
+            modules =
+              [
+                nixos-hardware.nixosModules.common-cpu-amd
+                nixos-hardware.nixosModules.common-gpu-amd
+                nixos-hardware.nixosModules.common-pc
+                nixos-hardware.nixosModules.common-pc-hdd
+                ./hosts/zx4250
+                ./users/casa
+              ]
+              ++ sharedModules;
             format = "install-iso";
           };
         };
@@ -108,28 +119,30 @@
         aarch64-linux = {
           pi4b-sd = nixos-generators.nixosGenerate {
             system = "aarch64-linux";
-            modules = [
-              nixos-hardware.nixosModules.raspberry-pi-4
-              home-manager.nixosModules.home-manager
-              ./hosts/pi4b/minimal.nix
-              ./users/pi
-              {
-                # See: https://github.com/NixOS/nixpkgs/issues/126755#issuecomment-869149243
-                nixpkgs.overlays = [
-                  (final: super: {
-                    makeModulesClosure = x:
-                      super.makeModulesClosure (x // {allowMissing = true;});
-                  })
-                ];
-              }
-            ];
+            modules =
+              [
+                nixos-hardware.nixosModules.raspberry-pi-4
+                ./hosts/pi4b/minimal.nix
+                ./users/pi
+                {
+                  # Workaround for missing kernel modules.
+                  # See: https://github.com/NixOS/nixpkgs/issues/126755#issuecomment-869149243
+                  nixpkgs.overlays = [
+                    (final: super: {
+                      makeModulesClosure = x:
+                        super.makeModulesClosure (x // {allowMissing = true;});
+                    })
+                  ];
+                }
+              ]
+              ++ sharedModules;
             format = "sd-aarch64";
           };
         };
       };
     }
     // flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {inherit system;};
     in {
       formatter = pkgs.alejandra;
     });
