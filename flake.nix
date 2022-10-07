@@ -30,7 +30,6 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     flake-utils,
     nixos-hardware,
@@ -41,7 +40,7 @@
   }:
     {
       nixosConfigurations = {
-        # Acer Swift 3 (SF314-52)
+        # Acer Swift 3
         swift3 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
@@ -55,7 +54,7 @@
           ];
         };
 
-        # Gateway AiO ZX4250
+        # Gateway ZX4250
         zx4250 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
@@ -82,6 +81,7 @@
       };
 
       nixOnDroidConfigurations = {
+        # Samsung Galaxy A32 (4G)
         a32 = nix-on-droid.lib.nixOnDroidConfiguration {
           system = "aarch64-linux";
           config = ./hosts/a32;
@@ -101,7 +101,7 @@
               ./hosts/zx4250
               ./users/casa
             ];
-            format = "sd-aarch64";
+            format = "install-iso";
           };
         };
 
@@ -113,6 +113,15 @@
               home-manager.nixosModules.home-manager
               ./hosts/pi4b/minimal.nix
               ./users/pi
+              {
+                # See: https://github.com/NixOS/nixpkgs/issues/126755#issuecomment-869149243
+                nixpkgs.overlays = [
+                  (final: super: {
+                    makeModulesClosure = x:
+                      super.makeModulesClosure (x // {allowMissing = true;});
+                  })
+                ];
+              }
             ];
             format = "sd-aarch64";
           };

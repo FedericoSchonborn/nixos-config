@@ -1,10 +1,11 @@
 {modulesPath, ...}: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    ./services/openssh.nix
+    ./documentation.nix
     ./file-systems.nix
     ./networking.nix
     ./nix.nix
+    ./services/openssh.nix
     ./zram-swap.nix
   ];
 
