@@ -3,9 +3,11 @@
     ./direnv.nix
     ./gh.nix
     ./git.nix
-    ./vscode
     ./zsh.nix
   ];
 
-  programs.home-manager.enable = true;
+  programs = {
+    home-manager.enable = true;
+    vscode.enable = true;
+  };
 }

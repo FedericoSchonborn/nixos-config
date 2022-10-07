@@ -1,6 +1,0 @@
-[
-    {
-        "key": "ctrl+[Semicolon]",
-        "command": "workbench.action.terminal.toggleTerminal"
-    }
-]

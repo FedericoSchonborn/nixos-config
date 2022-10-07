@@ -1,5 +1,3 @@
 {
-  imports = [
-    ./syncthing.nix
-  ];
+  services.syncthing.enable = true;
 }

@@ -2,7 +2,6 @@
   imports = [
     ./programs
     ./services
-    ./xdg.nix
   ];
 
   home = {
@@ -22,7 +21,6 @@
       spotify
       thunderbird
       rnix-lsp
-      nixpkgs-fmt
     ];
   };
 
