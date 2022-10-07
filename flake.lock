@@ -25,11 +25,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1664573442,
-        "narHash": "sha256-AovlSIuJfMf8n9QLNUVtsCul+NVHIoen7APH2fLls3k=",
+        "lastModified": 1665098471,
+        "narHash": "sha256-sNy1nfNg/p/q7JqsJtEOWbV3m5i5M89FzAJwbIn6W2Y=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a7f0cc2d7b271b4a5df9b9e351d556c172f7e903",
+        "rev": "be2cade373d96b469e5f4bb22c40cac87cf5a6f0",
         "type": "github"
       },
       "original": {
@@ -51,11 +51,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1663972330,
-        "narHash": "sha256-r5l1STgGyrldeAW64Jn8nNlFkbPZLquy8ek6EaIKRCk=",
+        "lastModified": 1664836993,
+        "narHash": "sha256-X5wmYjmEKVG7NE6K+P11wGeIp1LYHAiBf5inJV3is0c=",
         "owner": "t184256",
         "repo": "nix-on-droid",
-        "rev": "e6c9902ddc14eaac2ee284f57fe10e7b5990080d",
+        "rev": "83ab4679924bcd3d768b66e1f5541e5c807deecc",
         "type": "github"
       },
       "original": {
@@ -102,11 +102,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1664628729,
-        "narHash": "sha256-A1J0ZPhBfZZiWI6ipjKJ8+RpMllzOMu/An/8Tk3t4oo=",
+        "lastModified": 1665040200,
+        "narHash": "sha256-glqL6yj3aUm40y92inzRmowGt9aIrUrpBX7eBAMic4I=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "3024c67a2e9a35450558426c42e7419ab37efd95",
+        "rev": "47fd70289491c1f0c0d9a1f44fb5a9e2801120c9",
         "type": "github"
       },
       "original": {
@@ -117,11 +117,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1664693673,
-        "narHash": "sha256-cyG8Xbu05huCQbHKETxX73FeRPnrbX+3TIaatS4vZog=",
+        "lastModified": 1665109266,
+        "narHash": "sha256-h1mFsmfJq/WLFfw7d5dS4gU2NsiIYAIRTiJhYQaSPyA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "352ed567a786e4c0f9c7a0838783fd9a84e85c5a",
+        "rev": "912987486792abf0d4356f3b7025a24e381aa945",
         "type": "github"
       },
       "original": {

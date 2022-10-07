@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.vscode.extensions = with pkgs.vscode-extensions;
     [
       streetsidesoftware.code-spell-checker # Code Spell Checker

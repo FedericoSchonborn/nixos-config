@@ -1,12 +1,12 @@
-{ modulesPath, ... }:
-
-{
+{modulesPath, ...}: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     ./services
     ./environment.nix
+    ./file-systems.nix
     ./networking.nix
     ./nix.nix
+    ./zram-swap.nix
   ];
 
   # This value determines the NixOS release from which the default

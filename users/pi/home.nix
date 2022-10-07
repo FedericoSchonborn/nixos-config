@@ -1,7 +1,11 @@
-{
+{pkgs, ...}: {
   home = {
     username = "pi";
     homeDirectory = "/home/pi";
+
+    packages = with pkgs; [
+      nano
+    ];
   };
 
   # This value determines the Home Manager release that your

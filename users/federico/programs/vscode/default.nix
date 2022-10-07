@@ -1,9 +1,6 @@
-{ pkgs, ... }:
-
-let
+{pkgs, ...}: let
   readJSON = path: builtins.fromJSON (builtins.readFile path);
-in
-{
+in {
   imports = [
     ./extensions.nix
   ];

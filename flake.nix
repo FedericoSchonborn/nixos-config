@@ -29,15 +29,16 @@
     };
   };
 
-  outputs =
-    { nixpkgs
-    , flake-utils
-    , nixos-hardware
-    , home-manager
-    , nixos-generators
-    , nix-on-droid
-    , ...
-    }:
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    nixos-hardware,
+    home-manager,
+    nixos-generators,
+    nix-on-droid,
+    ...
+  }:
     {
       nixosConfigurations = {
         # Acer Swift 3 (SF314-52)
@@ -69,15 +70,15 @@
         };
 
         # Raspberry Pi 4 Model B (1GB)
-        # pi4b = nixpkgs.lib.nixosSystem {
-        #   system = "aarch64-linux";
-        #   modules = [
-        #     nixos-hardware.nixosModules.raspberry-pi-4
-        #     home-manager.nixosModules.home-manager
-        #     ./hosts/pi4b
-        #     ./users/pi
-        #   ];
-        # };
+        pi4b = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
+          modules = [
+            nixos-hardware.nixosModules.raspberry-pi-4
+            home-manager.nixosModules.home-manager
+            ./hosts/pi4b
+            ./users/pi
+          ];
+        };
       };
 
       nixOnDroidConfigurations = {
@@ -86,26 +87,41 @@
           config = ./hosts/a32;
         };
       };
-    } // flake-utils.lib.eachDefaultSystem (system:
-    let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
-      packages = {
-        # pi4b-sd = nixos-generators.nixosGenerate {
-        #   system = "aarch64-linux";
-        #   modules = [
-        #     nixos-hardware.nixosModules.raspberry-pi-4
-        #     home-manager.nixosModules.home-manager
-        #     ./hosts/pi4b
-        #     ./users/pi
-        #   ];
-        #   format = "sd-aarch64";
-        # };
-      };
 
-      devShells.default = pkgs.mkShell { };
-      formatter = pkgs.nixpkgs-fmt;
+      packages = {
+        x86_64-linux = {
+          zx4250-iso = nixos-generators.nixosGenerate {
+            system = "x86_64-linux";
+            modules = [
+              nixos-hardware.nixosModules.common-cpu-amd
+              nixos-hardware.nixosModules.common-gpu-amd
+              nixos-hardware.nixosModules.common-pc
+              nixos-hardware.nixosModules.common-pc-hdd
+              home-manager.nixosModules.home-manager
+              ./hosts/zx4250
+              ./users/casa
+            ];
+            format = "sd-aarch64";
+          };
+        };
+
+        aarch64-linux = {
+          pi4b-sd = nixos-generators.nixosGenerate {
+            system = "aarch64-linux";
+            modules = [
+              nixos-hardware.nixosModules.raspberry-pi-4
+              home-manager.nixosModules.home-manager
+              ./hosts/pi4b/minimal.nix
+              ./users/pi
+            ];
+            format = "sd-aarch64";
+          };
+        };
+      };
     }
-    );
+    // flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      formatter = pkgs.alejandra;
+    });
 }
