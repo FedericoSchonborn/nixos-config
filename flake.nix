@@ -97,53 +97,49 @@
           config = ./hosts/a32;
         };
       };
-
-      packages = {
-        x86_64-linux = {
-          zx4250-iso = nixos-generators.nixosGenerate {
-            system = "x86_64-linux";
-            modules =
-              [
-                nixos-hardware.nixosModules.common-cpu-amd
-                nixos-hardware.nixosModules.common-gpu-amd
-                nixos-hardware.nixosModules.common-pc
-                nixos-hardware.nixosModules.common-pc-hdd
-                ./hosts/zx4250
-                ./users/casa
-              ]
-              ++ sharedModules;
-            format = "install-iso";
-          };
-        };
-
-        aarch64-linux = {
-          pi4b-sd = nixos-generators.nixosGenerate {
-            system = "aarch64-linux";
-            modules =
-              [
-                nixos-hardware.nixosModules.raspberry-pi-4
-                ./hosts/pi4b/minimal.nix
-                ./users/pi
-                {
-                  # Workaround for missing kernel modules.
-                  # See: https://github.com/NixOS/nixpkgs/issues/126755#issuecomment-869149243
-                  nixpkgs.overlays = [
-                    (final: super: {
-                      makeModulesClosure = x:
-                        super.makeModulesClosure (x // {allowMissing = true;});
-                    })
-                  ];
-                }
-              ]
-              ++ sharedModules;
-            format = "sd-aarch64";
-          };
-        };
-      };
     }
     // flake-utils.lib.eachDefaultSystem (system: let
       pkgs = import nixpkgs {inherit system;};
     in {
+      packages = {
+        zx4250-iso = nixos-generators.nixosGenerate {
+          system = "x86_64-linux";
+          modules =
+            [
+              nixos-hardware.nixosModules.common-cpu-amd
+              nixos-hardware.nixosModules.common-gpu-amd
+              nixos-hardware.nixosModules.common-pc
+              nixos-hardware.nixosModules.common-pc-hdd
+              ./hosts/zx4250
+              ./users/casa
+            ]
+            ++ sharedModules;
+          format = "install-iso";
+        };
+
+        pi4b-sd = nixos-generators.nixosGenerate {
+          system = "aarch64-linux";
+          modules =
+            [
+              nixos-hardware.nixosModules.raspberry-pi-4
+              ./hosts/pi4b/minimal.nix
+              ./users/pi
+              {
+                # Workaround for missing kernel modules.
+                # See: https://github.com/NixOS/nixpkgs/issues/126755#issuecomment-869149243
+                nixpkgs.overlays = [
+                  (final: super: {
+                    makeModulesClosure = x:
+                      super.makeModulesClosure (x // {allowMissing = true;});
+                  })
+                ];
+              }
+            ]
+            ++ sharedModules;
+          format = "sd-aarch64";
+        };
+      };
+
       formatter = pkgs.alejandra;
     });
 }

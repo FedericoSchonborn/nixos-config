@@ -1,20 +1,17 @@
 {pkgs, ...}: {
   services.xserver = {
-    desktopManager.plasma5 = {
+    desktopManager.pantheon = {
       enable = true;
-      phononBackend = "vlc";
+      extraWingpanelIndicators = with pkgs; [
+        wingpanel-indicator-ayatana
+      ];
     };
 
-    displayManager = {
-      defaultSession = "plasmawayland";
-      sddm.enable = true;
-    };
+    displayManager.lightdm.greeters.pantheon.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    kate
-    vlc
+  programs.pantheon-tweaks.enable = true;
+  environment.pantheon.excludePackages = with pkgs; [
+    epiphany
   ];
-
-  programs.kdeconnect.enable = true;
 }
