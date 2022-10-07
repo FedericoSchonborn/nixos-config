@@ -1,10 +1,3 @@
 {pkgs, ...}: {
-  services.syncthing = {
-    enable = true;
-
-    tray = {
-      enable = true;
-      package = pkgs.qsyncthingtray;
-    };
-  };
+  services.syncthing.enable = true;
 }
