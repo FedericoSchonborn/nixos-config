@@ -1,17 +1,10 @@
 {pkgs, ...}: {
   services.xserver = {
-    desktopManager.pantheon = {
-      enable = true;
-      extraWingpanelIndicators = with pkgs; [
-        wingpanel-indicator-ayatana
-      ];
-    };
-
-    displayManager.lightdm.greeters.pantheon.enable = true;
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
   };
 
-  programs.pantheon-tweaks.enable = true;
-  environment.pantheon.excludePackages = with pkgs; [
+  environment.gnome.excludePackages = with pkgs; [
     epiphany
   ];
 }

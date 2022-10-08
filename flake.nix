@@ -2,7 +2,7 @@
   description = "NixOS configuration files";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
@@ -43,7 +43,7 @@
       {
         nix = {
           registry.nixpkgs.flake = nixpkgs;
-          nixPath.nixpkgs = "${nixpkgs}";
+          nixPath = ["nixpkgs=${nixpkgs}"];
         };
       }
     ];

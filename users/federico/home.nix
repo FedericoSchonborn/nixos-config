@@ -19,7 +19,6 @@
       libreoffice-fresh
       minecraft
       spotify
-      thunderbird
       rnix-lsp
     ];
   };
