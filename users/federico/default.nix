@@ -11,9 +11,5 @@
     };
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.federico = import ./home.nix;
-  };
+  home-manager.users.federico = import ./home.nix;
 }

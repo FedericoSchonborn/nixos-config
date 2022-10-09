@@ -1,7 +1,10 @@
 {pkgs, ...}: {
   services.vaultwarden = {
     enable = true;
-    webVaultPackage = pkgs.vaultwarden-vault;
-    backupDir = "/media/Elements/Vaultwarden";
+    backupDir = "/mount/Elements/Vaultwarden/Backup";
+    config = {
+      ROCKET_PORT = 2839;
+      WEB_VAULT_ENABLED = true;
+    };
   };
 }

@@ -10,9 +10,5 @@
     };
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.casa = import ./home.nix;
-  };
+  home-manager.users.casa = import ./home.nix;
 }

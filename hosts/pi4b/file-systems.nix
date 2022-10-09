@@ -7,7 +7,6 @@
 
     "/mount/Elements" = {
       device = "/dev/disk/by-label/Elements";
-      fsType = "ext4";
     };
   };
 }
