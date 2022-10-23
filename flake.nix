@@ -46,10 +46,6 @@
     ...
   }: let
     sharedModules = [
-      agenix.nixosModules.age
-      {
-        age.secrets.wireless.file = ./secrets/wireless.age;
-      }
       home-manager.nixosModules.home-manager
       {
         home-manager = {
@@ -103,6 +99,7 @@
           modules =
             [
               nixos-hardware.nixosModules.raspberry-pi-4
+              agenix.nixosModules.age
               ./hosts/pi4b
               ./users/pi
             ]
