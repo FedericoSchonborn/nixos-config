@@ -7,7 +7,6 @@
     ./file-systems.nix
     ./networking.nix
     ./nix.nix
-    ./secrets.nix
     ./services
     ./zram-swap.nix
   ];
