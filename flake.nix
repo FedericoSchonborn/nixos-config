@@ -1,5 +1,5 @@
 {
-  description = "NixOS configuration files";
+  description = "Configuration files for NixOS and Home Manager";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -48,7 +48,8 @@
         };
       }
     ];
-  in {
+  in rec
+  {
     nixosConfigurations = {
       # Acer Swift 3
       swift3 = nixpkgs.lib.nixosSystem {
@@ -100,6 +101,27 @@
         config = ./hosts/a32;
       };
     };
+
+    packages = {
+      "x86_64-linux" = {
+        swift3-vm = nixosConfigurations.swift3.config.system.build.vm;
+        zx4250-vm = nixosConfigurations.zx4250.config.system.build.vm;
+      };
+
+      "aarch64-linux" = {
+        pi4b-sd = nixosConfigurations.pi4b.config.system.build.sdImage;
+      };
+    };
+
+    devShells = forAllSystems (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      default = pkgs.mkShell {
+        nativeBuildInputs = with pkgs; [
+          just
+        ];
+      };
+    });
 
     checks =
       forAllSystems
