@@ -11,7 +11,7 @@
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
       discord
-      fractal
+      neochat
       firefox
       gimp
       inkscape

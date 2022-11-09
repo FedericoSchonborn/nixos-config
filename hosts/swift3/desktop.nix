@@ -1,10 +1,10 @@
 {pkgs, ...}: {
   services.xserver = {
-    desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
-  };
+    displayManager.sddm.enable = true;
 
-  environment.gnome.excludePackages = with pkgs; [
-    epiphany
-  ];
+    desktopManager.plasma5 = {
+      enable = true;
+      phononBackend = "vlc";
+    };
+  };
 }
