@@ -11,15 +11,17 @@
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
       discord
-      neochat
       firefox
       gimp
       inkscape
       keepassxc
       libreoffice-fresh
       minecraft
-      spotify
+      neochat
       rnix-lsp
+      # spotify
+      vlc
+      yakuake
     ];
   };
 
