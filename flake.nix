@@ -120,6 +120,10 @@
         packages = with pkgs; [
           just
         ];
+
+        shellHook = ''
+          ${checks.${system}.pre-commit-check.shellHook}
+        '';
       };
     });
 

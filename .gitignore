@@ -1,4 +1,10 @@
-.direnv
+# Nix
+result*
 *.fd
 *.qcow2
-result
+
+# Direnv
+.direnv
+
+# pre-commit-hooks
+.pre-commit-config.yaml
