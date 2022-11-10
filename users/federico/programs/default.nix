@@ -3,6 +3,7 @@
     ./direnv.nix
     ./gh.nix
     ./git.nix
+    ./starship.nix
     ./zsh.nix
   ];
 

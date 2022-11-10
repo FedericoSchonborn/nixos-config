@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   imports = [
     ./programs
     ./services
@@ -19,7 +19,7 @@
       minecraft
       neochat
       rnix-lsp
-      # spotify
+      spotify
       vlc
       yakuake
     ];
