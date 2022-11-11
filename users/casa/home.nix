@@ -5,6 +5,7 @@
 
     packages = with pkgs; [
       google-chrome
+      libreoffice-fresh
     ];
   };
 
