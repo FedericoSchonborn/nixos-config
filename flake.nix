@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
-    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -18,6 +17,13 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
+      };
+    };
+
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
       };
     };
   };
