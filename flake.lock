@@ -36,6 +36,27 @@
         "type": "github"
       }
     },
+    "home-manager-droid": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-droid"
+        ]
+      },
+      "locked": {
+        "lastModified": 1667907331,
+        "narHash": "sha256-bHkAwkYlBjkupPUFcQjimNS8gxWSWjOTevEuwdnp5m0=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "6639e3a837fc5deb6f99554072789724997bc8e5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-22.05",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "nix-formatter-pack": {
       "inputs": {
         "nixpkgs": [
@@ -62,11 +83,11 @@
     "nix-on-droid": {
       "inputs": {
         "home-manager": [
-          "home-manager"
+          "home-manager-droid"
         ],
         "nix-formatter-pack": "nix-formatter-pack",
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-droid"
         ],
         "nixpkgs-for-bootstrap": "nixpkgs-for-bootstrap"
       },
@@ -111,6 +132,22 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-droid": {
+      "locked": {
+        "lastModified": 1668016843,
+        "narHash": "sha256-ioBuF+IAhmJO7s4ewEij1LkMxJvCCNCKXxMto/DU02I=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "fa842715565307b7e05cdb187b08c05f16ed08f1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-22.05",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -187,9 +224,11 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "home-manager-droid": "home-manager-droid",
         "nix-on-droid": "nix-on-droid",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-droid": "nixpkgs-droid",
         "pre-commit-hooks": "pre-commit-hooks"
       }
     },

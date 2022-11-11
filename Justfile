@@ -4,7 +4,7 @@
 # Build one or more packages.
 @build +PACKAGES:
     for package in {{ PACKAGES }}; do \
-        nix build --print-build-logs ".#$package"; \
+        nix build --print-build-logs ".#${package}"; \
     done
 
 # Format Nix files.
