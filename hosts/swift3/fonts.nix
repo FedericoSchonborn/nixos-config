@@ -1,3 +1,9 @@
-{
-  fonts.enableDefaultFonts = true;
+{pkgs, ...}: {
+  fonts = {
+    enableDefaultFonts = true;
+    enableGhostscriptFonts = true;
+    fonts = with pkgs; [
+      cascadia-code
+    ];
+  };
 }
