@@ -18,7 +18,7 @@
       libreoffice-fresh
       minecraft
       neochat
-      rnix-lsp
+      nil
       spotify
       vlc
       yakuake

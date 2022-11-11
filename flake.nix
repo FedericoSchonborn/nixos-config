@@ -34,17 +34,20 @@
     forAllSystems = nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux"];
 
     sharedModules = [
+      # Nix
+      {
+        nix = {
+          registry.nixpkgs.flake = nixpkgs;
+          nixPath = ["nixpkgs=${nixpkgs}"];
+        };
+      }
+
+      # Home Manager
       home-manager.nixosModules.home-manager
       {
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
-        };
-      }
-      {
-        nix = {
-          registry.nixpkgs.flake = nixpkgs;
-          nixPath = ["nixpkgs=${nixpkgs}"];
         };
       }
     ];
