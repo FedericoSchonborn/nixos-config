@@ -2,6 +2,8 @@
   imports = [
     ./programs
     ./services
+    ./systemd.nix
+    ./xdg
   ];
 
   home = {
@@ -20,7 +22,6 @@
       neochat
       nil
       spotify
-      vlc
       yakuake
     ];
   };

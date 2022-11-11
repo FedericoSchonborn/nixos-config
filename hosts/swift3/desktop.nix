@@ -7,4 +7,9 @@
       phononBackend = "vlc";
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    kate
+    vlc
+  ];
 }
