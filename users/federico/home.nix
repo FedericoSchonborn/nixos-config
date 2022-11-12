@@ -2,7 +2,6 @@
   imports = [
     ./programs
     ./services
-    ./systemd.nix
     ./xdg
   ];
 
