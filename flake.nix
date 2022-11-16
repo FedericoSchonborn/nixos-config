@@ -7,9 +7,7 @@
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-on-droid = {
@@ -22,25 +20,37 @@
 
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nil = {
+      url = "github:oxalica/nil";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    alejandra = {
+      url = "github:kamadorueda/alejandra";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs = {
+    self,
     nixpkgs,
     nixos-hardware,
     home-manager,
     nix-on-droid,
     pre-commit-hooks,
+    nil,
+    alejandra,
     ...
-  }: let
+  } @ inputs: let
     forAllSystems = nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux"];
 
     sharedModules = [
       # Nix
       {
+        # TODO: Add *all* inputs and substituters here.
         nix = {
           registry.nixpkgs.flake = nixpkgs;
           nixPath = ["nixpkgs=${nixpkgs}"];
@@ -56,19 +66,15 @@
         };
       }
     ];
-  in rec
-  {
+  in {
     nixosConfigurations = {
       # Acer Swift 3
       swift3 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = inputs;
         modules =
           sharedModules
           ++ [
-            nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
-            nixos-hardware.nixosModules.common-gpu-intel
-            nixos-hardware.nixosModules.common-pc-laptop
-            nixos-hardware.nixosModules.common-pc-laptop-ssd
             ./hosts/swift3
             ./users/federico
           ];
@@ -77,27 +83,12 @@
       # Gateway ZX4250
       zx4250 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = inputs;
         modules =
           sharedModules
           ++ [
-            nixos-hardware.nixosModules.common-cpu-amd
-            nixos-hardware.nixosModules.common-gpu-amd
-            nixos-hardware.nixosModules.common-pc
-            nixos-hardware.nixosModules.common-pc-hdd
             ./hosts/zx4250
             ./users/casa
-          ];
-      };
-
-      # Raspberry Pi 4 Model B (2GB)
-      pi4b = nixpkgs.lib.nixosSystem {
-        system = "aarch64-linux";
-        modules =
-          sharedModules
-          ++ [
-            nixos-hardware.nixosModules.raspberry-pi-4
-            ./hosts/pi4b
-            ./users/pi
           ];
       };
     };
@@ -113,27 +104,17 @@
       };
     };
 
-    packages = {
-      "x86_64-linux" = {
-        swift3-vm = nixosConfigurations.swift3.config.system.build.vm;
-        zx4250-vm = nixosConfigurations.zx4250.config.system.build.vm;
-      };
-
-      "aarch64-linux" = {
-        pi4b-sd = nixosConfigurations.pi4b.config.system.build.sdImage;
-      };
-    };
-
     devShells = forAllSystems (system: let
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       default = pkgs.mkShell {
         packages = with pkgs; [
           just
+          nil.packages.${system}.default
         ];
 
         shellHook = ''
-          ${checks.${system}.pre-commit-check.shellHook}
+          ${self.checks.${system}.pre-commit-check.shellHook}
         '';
       };
     });
@@ -151,6 +132,18 @@
           };
       });
 
-    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+    formatter = forAllSystems (system: alejandra.packages.${system}.default);
+  };
+
+  nixConfig = {
+    extra-substituters = [
+      "https://cache.nixos.org/"
+      "https://nix-community.cachix.org/"
+      "https://alejandra.cachix.org/"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "alejandra.cachix.org-1:NjZ8kI0mf4HCq8yPnBfiTurb96zp1TBWl8EC54Pzjm0="
+    ];
   };
 }

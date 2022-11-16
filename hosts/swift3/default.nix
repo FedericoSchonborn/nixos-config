@@ -1,5 +1,14 @@
-{modulesPath, ...}: {
+{
+  modulesPath,
+  nixos-hardware,
+  ...
+}: {
   imports = [
+    nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
+    nixos-hardware.nixosModules.common-gpu-intel
+    nixos-hardware.nixosModules.common-pc-laptop
+    nixos-hardware.nixosModules.common-pc-laptop-ssd
+
     (modulesPath + "/installer/scan/not-detected.nix")
     ./boot
     ./programs
@@ -12,8 +21,8 @@
     ./i18n.nix
     ./networking.nix
     ./nix.nix
-    ./power-management.nix
     ./security.nix
+    ./users.nix
     ./virtualisation.nix
     ./zram-swap.nix
   ];

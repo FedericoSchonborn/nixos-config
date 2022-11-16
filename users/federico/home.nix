@@ -2,7 +2,6 @@
   imports = [
     ./programs
     ./services
-    ./xdg
   ];
 
   home = {
@@ -17,11 +16,9 @@
       inkscape
       keepassxc
       libreoffice-fresh
-      minecraft
-      neochat
-      nil
+      prismlauncher
+      fractal
       spotify
-      yakuake
     ];
   };
 

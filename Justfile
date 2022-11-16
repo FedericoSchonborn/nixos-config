@@ -1,18 +1,15 @@
 @_default:
     just --list
 
-# Build one or more packages.
-@build +PACKAGES:
-    for package in {{ PACKAGES }}; do \
-        nix build --print-build-logs ".#${package}"; \
+# Build one or more system configurations.
+@build +HOSTS:
+    for host in {{ HOSTS }}; do \
+        nix build --print-build-logs ".#nixosConfigurations.${host}.config.system.build.toplevel"; \
     done
 
+# Switch to a system configuration.
 @switch HOST:
     sudo nixos-rebuild switch --flake ".#{{ HOST }}" --verbose
-
-# Format Nix files.
-@format:
-    nix fmt
 
 # Run checks on this Flake.
 @check:

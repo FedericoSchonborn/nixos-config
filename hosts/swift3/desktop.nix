@@ -1,18 +1,15 @@
 {pkgs, ...}: {
   services.xserver = {
-    displayManager = {
-      defaultSession = "plasmawayland";
-      sddm.enable = true;
-    };
-
-    desktopManager.plasma5 = {
-      enable = true;
-      phononBackend = "vlc";
-    };
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    kate
-    vlc
+  environment.gnome.excludePackages = with pkgs; [
+    epiphany
   ];
+
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.gnomeExtensions.gsconnect;
+  };
 }

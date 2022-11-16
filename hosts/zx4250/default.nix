@@ -1,5 +1,14 @@
-{modulesPath, ...}: {
+{
+  modulesPath,
+  nixos-hardware,
+  ...
+}: {
   imports = [
+    nixos-hardware.nixosModules.common-cpu-amd
+    nixos-hardware.nixosModules.common-gpu-amd
+    nixos-hardware.nixosModules.common-pc
+    nixos-hardware.nixosModules.common-pc-hdd
+
     (modulesPath + "/installer/scan/not-detected.nix")
     ./boot
     ./services
@@ -11,6 +20,7 @@
     ./i18n.nix
     ./networking.nix
     ./nix.nix
+    ./users.nix
     ./zram-swap.nix
   ];
 

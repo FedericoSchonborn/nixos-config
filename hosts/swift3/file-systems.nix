@@ -1,4 +1,6 @@
 {
+  boot.supportedFilesystems = ["exfat" "ntfs"];
+
   fileSystems = {
     "/boot" = {
       device = "/dev/sda1";
@@ -7,6 +9,11 @@
 
     "/" = {
       device = "/dev/sda2";
+      fsType = "ext4";
+    };
+
+    "/mnt/Expansion" = {
+      device = "/dev/disk/by-label/Expansion";
       fsType = "ext4";
     };
   };
