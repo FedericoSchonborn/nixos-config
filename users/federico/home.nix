@@ -17,7 +17,7 @@
       keepassxc
       libreoffice-fresh
       prismlauncher
-      fractal
+      element-desktop
       spotify
     ];
   };

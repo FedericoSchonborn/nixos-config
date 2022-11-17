@@ -1,7 +1,7 @@
-{
+{pkgs, ...}: {
   programs.vscode = {
     enable = true;
-    enableUpdateCheck = false;
+    package = pkgs.vscodium;
     userSettings = {
       "editor.fontFamily" = "Cascadia Code";
       "editor.fontLigatures" = true;
