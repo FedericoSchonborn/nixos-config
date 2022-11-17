@@ -11,7 +11,7 @@
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
       discord
-      firefox
+      firefox-wayland
       gimp
       inkscape
       keepassxc
@@ -19,6 +19,8 @@
       prismlauncher
       element-desktop
       spotify
+
+      gnomeExtensions.appindicator
     ];
   };
 
