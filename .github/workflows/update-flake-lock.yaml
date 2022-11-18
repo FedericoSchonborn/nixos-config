@@ -6,7 +6,8 @@ on:
     - cron: "0 0 * * 0" # Run every Sunday at 00:00.
 
 jobs:
-  lockfile:
+  update:
+    name: Update
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

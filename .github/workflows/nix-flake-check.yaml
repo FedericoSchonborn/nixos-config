@@ -1,10 +1,11 @@
-name: Flake check
+name: Check
 
 on:
   push:
 
 jobs:
   check:
+    name: Check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
