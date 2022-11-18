@@ -10,16 +10,27 @@
 
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
-      discord
-      firefox-wayland
+      # Games
+      prismlauncher
+      # Graphics
       gimp
       inkscape
-      keepassxc
-      libreoffice-fresh
-      prismlauncher
+      # Internet
+      discord
+      firefox-wayland
       element-desktop
+      # Multimedia
       spotify
+      # Office
+      libreoffice-fresh
+      # Utilities
+      keepassxc
 
+      # Tools
+      bat
+      # Nix
+      nil
+      # GNOME Extensions
       gnomeExtensions.appindicator
     ];
   };

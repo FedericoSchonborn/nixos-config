@@ -55,6 +55,10 @@
           registry.nixpkgs.flake = nixpkgs;
           nixPath = ["nixpkgs=${nixpkgs}"];
         };
+
+        nixpkgs.overlays = [
+          nil.overlays.default
+        ];
       }
 
       # Home Manager
@@ -110,7 +114,6 @@
       default = pkgs.mkShell {
         packages = with pkgs; [
           just
-          nil.packages.${system}.default
         ];
 
         shellHook = ''

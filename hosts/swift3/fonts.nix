@@ -4,6 +4,7 @@
     enableGhostscriptFonts = true;
     fonts = with pkgs; [
       cascadia-code
+      corefonts
     ];
   };
 }

@@ -80,6 +80,12 @@
         sha256 = "MLBPhDBU8vPVvbde3fdwhxKvQa8orUMKAAXoOfNrbh4=";
       }
       {
+        publisher = "piotrpalarz";
+        name = "vscode-gitignore-generator";
+        version = "1.0.3";
+        sha256 = "eqNjkoXXkcbtMDr2ndThqQ2qRFPw1ucQi6hv0eCBw3k=";
+      }
+      {
         publisher = "redhat";
         name = "vscode-yaml";
         version = "1.11.10112022";
@@ -90,6 +96,18 @@
         name = "rust-analyzer";
         version = "0.4.1288";
         sha256 = "DYNO2Ok9sfk9SZOwOYQBFzGsTTBW2dpDzM1CNSJ8O2E=";
+      }
+      {
+        publisher = "tamasfe";
+        name = "even-better-toml";
+        version = "0.19.0";
+        sha256 = "MqSQarNThbEf1wHDTf1yA46JMhWJN46b08c7tV6+1nU=";
+      }
+      {
+        publisher = "ultram4rine";
+        name = "vscode-choosealicense";
+        version = "0.9.0";
+        sha256 = "m60comJWcMEtWzf4y5o33/4I0nGiko4pXHC7YufoKY0=";
       }
     ];
   };

@@ -5,6 +5,7 @@
     ./gh.nix
     ./git.nix
     ./gtk.nix
+    ./neovim.nix
     ./starship.nix
     ./vscode.nix
     ./zsh.nix
