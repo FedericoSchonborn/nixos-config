@@ -47,6 +47,7 @@
         command = "workbench.action.terminal.toggleTerminal";
       }
     ];
+    mutableExtensionsDir = false;
     extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         publisher = "file-icons";
@@ -79,10 +80,10 @@
         sha256 = "MLBPhDBU8vPVvbde3fdwhxKvQa8orUMKAAXoOfNrbh4=";
       }
       {
-        publisher = "ms-ceintl";
-        name = "vscode-language-pack-es";
-        version = "1.74.11100236";
-        sha256 = "XE0mYAY93HE1b2oVKeXoT6l1+8NcuQkdg+aBR2sUcHs=";
+        publisher = "redhat";
+        name = "vscode-yaml";
+        version = "1.11.10112022";
+        sha256 = "/ZD3LOf6d5dJJW7eGZgkrf4hj1CXZJNI0u06Bnmyo0Q=";
       }
       {
         publisher = "rust-lang";
