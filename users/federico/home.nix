@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./programs
     ./services
@@ -34,6 +38,10 @@
       gnomeExtensions.appindicator
     ];
   };
+
+  nixpkgs.overlays = [
+    inputs.nil.overlays.default
+  ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

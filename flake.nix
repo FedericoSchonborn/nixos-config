@@ -55,10 +55,6 @@
           registry.nixpkgs.flake = nixpkgs;
           nixPath = ["nixpkgs=${nixpkgs}"];
         };
-
-        nixpkgs.overlays = [
-          nil.overlays.default
-        ];
       }
 
       # Home Manager
