@@ -12,7 +12,7 @@
     };
 
     extraConfig = {
-      core.editor = "nano -cl"; # Nano + line numbers + cursor position.
+      core.editor = "nvim";
       init.defaultBranch = "main";
       push.gpgSign = "if-asked";
       form.signOff = "true";
