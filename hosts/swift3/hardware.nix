@@ -6,10 +6,13 @@
   };
 
   hardware = {
-    bluetooth.enable = true;
+    bluetooth = {
+      enable = true;
+      package = pkgs.bluezFull;
+    };
+
     cpu.intel.updateMicrocode = true;
     sane.enable = true;
-    video.hidpi.enable = true;
     xpadneo.enable = true;
   };
 

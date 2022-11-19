@@ -30,12 +30,8 @@
       # Utilities
       keepassxc
 
-      # Tools
-      bat
       # Nix
       nil
-      # GNOME Extensions
-      gnomeExtensions.appindicator
     ];
   };
 

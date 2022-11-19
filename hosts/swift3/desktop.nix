@@ -1,15 +1,16 @@
 {pkgs, ...}: {
   services.xserver = {
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+    displayManager = {
+      defaultSession = "plasmawayland";
+      sddm.enable = true;
+    };
+
+    desktopManager.plasma5 = {
+      enable = true;
+      phononBackend = "vlc";
+    };
   };
 
-  environment.gnome.excludePackages = with pkgs; [
-    epiphany
-  ];
-
-  programs.kdeconnect = {
-    enable = true;
-    package = pkgs.gnomeExtensions.gsconnect;
-  };
+  programs.kdeconnect.enable = true;
+  programs.ssh.askPassword = "${pkgs.ksshaskpass}/bin/ksshaskpass";
 }
