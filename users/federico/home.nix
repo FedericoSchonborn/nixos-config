@@ -1,9 +1,6 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
+    ./modules
     ./programs
     ./services
   ];
@@ -16,28 +13,24 @@
     packages = with pkgs; [
       # Games
       prismlauncher
+      retroarchFull
       # Graphics
       gimp
       inkscape
       # Internet
       discord
-      firefox-wayland
-      element-desktop
+      firefox
+      neochat
+      thunderbird
       # Multimedia
       spotify
       # Office
       libreoffice-fresh
       # Utilities
       keepassxc
-
-      # Nix
-      nil
+      yakuake
     ];
   };
-
-  nixpkgs.overlays = [
-    inputs.nil.overlays.default
-  ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

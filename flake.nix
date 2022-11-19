@@ -23,13 +23,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    alejandra = {
+      url = "github:kamadorueda/alejandra";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nil = {
       url = "github:oxalica/nil";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    alejandra = {
-      url = "github:kamadorueda/alejandra";
+    prismlauncher = {
+      url = "github:PrismLauncher/PrismLauncher";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -41,8 +46,9 @@
     home-manager,
     nix-on-droid,
     pre-commit-hooks,
-    nil,
     alejandra,
+    nil,
+    prismlauncher,
     ...
   } @ inputs: let
     forAllSystems = nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux"];
@@ -110,6 +116,7 @@
       default = pkgs.mkShell {
         packages = with pkgs; [
           just
+          nil.packages.${system}.default
         ];
 
         shellHook = ''

@@ -11,6 +11,18 @@
     };
   };
 
-  programs.kdeconnect.enable = true;
-  programs.ssh.askPassword = "${pkgs.ksshaskpass}/bin/ksshaskpass";
+  environment.systemPackages = with pkgs; [
+    # Graphics
+    plasma5Packages.kamoso
+    skanlite
+    # Multimedia
+    vlc
+    # Utilities
+    kate
+  ];
+
+  programs = {
+    kdeconnect.enable = true;
+    ssh.askPassword = "${pkgs.ksshaskpass}/bin/ksshaskpass";
+  };
 }
