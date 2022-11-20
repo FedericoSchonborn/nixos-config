@@ -114,11 +114,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1668788863,
-        "narHash": "sha256-FsdUG+YkRX7JZKZm6T44J2h+0pXB1sWA9AobyiozFK0=",
+        "lastModified": 1668900402,
+        "narHash": "sha256-IhVlueHoQNoN0SOHZIceKU3LyEL00g2ei0aUlaNypbQ=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "948d1f8a5cef55a281d4f5d17f3b79df6c82fce1",
+        "rev": "c0f9cbcf93ca22e4f0ca66843be61a4bdf6f0a44",
         "type": "github"
       },
       "original": {
@@ -300,11 +300,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1667992213,
-        "narHash": "sha256-8Ens8ozllvlaFMCZBxg6S7oUyynYx2v7yleC5M0jJsE=",
+        "lastModified": 1668887252,
+        "narHash": "sha256-3JgsogMPEf5lQPMMmYb4ZNsbUHNlgIxSQmF7Dew6Wek=",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "ebcbfe09d2bd6d15f68de3a0ebb1e4dcb5cd324b",
+        "rev": "f66b4ab9c9d831c6302a2afd61df0931fb60499b",
         "type": "github"
       },
       "original": {
@@ -323,11 +323,11 @@
         "tomlplusplus": "tomlplusplus"
       },
       "locked": {
-        "lastModified": 1668803834,
-        "narHash": "sha256-Ox4X/sHeeGs5qJpXzRRUolSI3maaUrM1amzkz2OHBBw=",
+        "lastModified": 1668879915,
+        "narHash": "sha256-9z3dIveomRIEda6xEIJlntAo1VMzUlkbBksaDO7mIA0=",
         "owner": "PrismLauncher",
         "repo": "PrismLauncher",
-        "rev": "347ae0a9ad8d5d933ef76dedab177995029e5f0d",
+        "rev": "30607c34a153fd32085712e18827983772d77f7b",
         "type": "github"
       },
       "original": {
