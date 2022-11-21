@@ -16,5 +16,10 @@
     xpadneo.enable = true;
   };
 
+  services.hardware.openrgb = {
+    enable = true;
+    motherboard = "intel";
+  };
+
   powerManagement.enable = true;
 }

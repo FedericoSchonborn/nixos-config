@@ -28,7 +28,6 @@
       libreoffice-fresh
       # Utilities
       keepassxc
-      yakuake
     ];
   };
 
