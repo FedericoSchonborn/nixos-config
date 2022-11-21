@@ -1,18 +1,15 @@
 {pkgs, ...}: {
   services.xserver = {
     displayManager = {
-      defaultSession = "plasmawayland";
       sddm.enable = true;
     };
 
-    desktopManager.plasma5 = {
+    desktopManager.lxqt = {
       enable = true;
-      phononBackend = "vlc";
     };
   };
 
   environment.systemPackages = with pkgs; [
-    kate
     vlc
   ];
 }

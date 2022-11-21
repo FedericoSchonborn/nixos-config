@@ -3,10 +3,9 @@
     enableDefaultFonts = true;
     enableGhostscriptFonts = true;
     fonts = with pkgs; [
-      (nerdfonts.override {
-        fonts = ["JetBrainsMono"];
-      })
+      cascadia-code
       corefonts
+      vistafonts
     ];
   };
 }
