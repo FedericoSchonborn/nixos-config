@@ -28,6 +28,7 @@
       libreoffice-fresh
       # Utilities
       keepassxc
+      neofetch
     ];
   };
 

@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   home = {
     username = "casa";
     homeDirectory = "/home/casa";
@@ -7,6 +11,20 @@
       google-chrome
       libreoffice-fresh
     ];
+  };
+
+  home.file."Escritorio/google-chrome.desktop" = {
+    source = "${pkgs.google-chrome}/share/applications/google-chrome.desktop";
+    executable = true;
+  };
+
+  xdg = {
+    enable = true;
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      desktop = "${config.home.homeDirectory}/Escritorio";
+    };
   };
 
   # This value determines the Home Manager release that your

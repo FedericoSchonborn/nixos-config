@@ -22,21 +22,6 @@
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    alejandra = {
-      url = "github:kamadorueda/alejandra";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nil = {
-      url = "github:oxalica/nil";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    prismlauncher = {
-      url = "github:PrismLauncher/PrismLauncher";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -46,9 +31,6 @@
     home-manager,
     nix-on-droid,
     pre-commit-hooks,
-    alejandra,
-    nil,
-    prismlauncher,
     ...
   } @ inputs: let
     forAllSystems = nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux"];
@@ -116,7 +98,6 @@
       default = pkgs.mkShell {
         packages = with pkgs; [
           just
-          nil.packages.${system}.default
         ];
 
         inherit (self.checks.${system}.pre-commit-check) shellHook;
@@ -136,17 +117,6 @@
           };
       });
 
-    formatter = forAllSystems (system: alejandra.packages.${system}.default);
-  };
-
-  nixConfig = {
-    extra-substituters = [
-      "https://nix-community.cachix.org/"
-      "https://alejandra.cachix.org/"
-    ];
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "alejandra.cachix.org-1:NjZ8kI0mf4HCq8yPnBfiTurb96zp1TBWl8EC54Pzjm0="
-    ];
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
   };
 }

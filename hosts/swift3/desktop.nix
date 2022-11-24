@@ -18,6 +18,7 @@
     # Multimedia
     vlc
     # Utilities
+    ark
     kate
   ];
 
