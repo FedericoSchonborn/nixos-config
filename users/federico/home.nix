@@ -14,19 +14,27 @@
       # Games
       prismlauncher
       retroarchFull
+
       # Graphics
       gimp
       inkscape
+
       # Internet
       discord
       element-desktop
+
       # Multimedia
       spotify
+
       # Office
       libreoffice-fresh
+
       # Utilities
       keepassxc
       neofetch
+
+      # GNOME Extensions
+      gnomeExtensions.appindicator
     ];
   };
 
