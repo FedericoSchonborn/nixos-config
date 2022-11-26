@@ -48,6 +48,7 @@
 
         nixpkgs.config.packageOverrides = pkgs: {
           nur = import nur {
+            nurpkgs = pkgs;
             inherit pkgs;
           };
         };
