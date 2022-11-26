@@ -4,5 +4,5 @@
   ];
 
   # Read the changelog before changing this value.
-  system.stateVersion = "22.11";
+  system.stateVersion = "23.05";
 }
