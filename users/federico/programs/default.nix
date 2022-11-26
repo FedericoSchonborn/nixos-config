@@ -1,10 +1,11 @@
 {
   imports = [
     ./direnv.nix
+    ./firefox
     ./gh.nix
     ./git.nix
     ./starship.nix
-    ./vscode.nix
+    ./vscode
     ./zsh.nix
   ];
 
