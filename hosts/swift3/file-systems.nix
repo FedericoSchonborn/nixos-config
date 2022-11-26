@@ -1,6 +1,4 @@
 {
-  boot.supportedFilesystems = ["exfat" "ntfs"];
-
   fileSystems = {
     "/boot" = {
       device = "/dev/sda1";

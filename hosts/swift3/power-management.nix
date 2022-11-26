@@ -1,0 +1,3 @@
+{
+  powerManagement.enable = true;
+}

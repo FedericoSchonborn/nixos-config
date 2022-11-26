@@ -2,6 +2,7 @@
   services.xserver = {
     enable = true;
     excludePackages = [pkgs.xterm];
+    layout = "latam";
 
     libinput = {
       enable = true;

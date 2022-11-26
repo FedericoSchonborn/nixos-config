@@ -19,9 +19,7 @@
       inkscape
       # Internet
       discord
-      firefox
-      neochat
-      thunderbird
+      element-desktop
       # Multimedia
       spotify
       # Office

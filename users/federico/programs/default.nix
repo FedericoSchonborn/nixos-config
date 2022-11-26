@@ -3,8 +3,8 @@
     ./direnv.nix
     ./gh.nix
     ./git.nix
-    ./neovim
     ./starship.nix
+    ./vscode.nix
     ./zsh.nix
   ];
 

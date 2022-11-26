@@ -7,8 +7,6 @@
       support32Bit = true;
     };
     pulse.enable = true;
-
-    wireplumber.enable = true;
   };
 
   # Required by Pipewire.

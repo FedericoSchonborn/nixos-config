@@ -11,19 +11,24 @@
 
     (modulesPath + "/installer/scan/not-detected.nix")
     ./boot
-    ./programs
-    ./services
+    ./console.nix
+    ./default.nix
     ./desktop.nix
     ./environment.nix
     ./file-systems.nix
     ./fonts.nix
-    ./hardware.nix
+    ./hardware
     ./i18n.nix
-    ./networking.nix
+    ./networking
     ./nix.nix
-    ./security.nix
+    ./nixpkgs.nix
+    ./power-management.nix
+    ./programs
+    ./security
+    ./services
+    ./time.nix
     ./users.nix
-    ./virtualisation.nix
+    ./virtualisation
     ./zram-swap.nix
   ];
 

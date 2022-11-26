@@ -1,14 +1,9 @@
 {
   imports = [
+    ./command-not-found.nix
+    ./gamemode.nix
+    ./gnupg.nix
+    ./kdeconnect.nix
     ./steam.nix
   ];
-
-  programs = {
-    command-not-found.enable = true;
-    gamemode.enable = true;
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
-  };
 }

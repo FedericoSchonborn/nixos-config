@@ -1,15 +1,11 @@
 {
   imports = [
     ./binfmt.nix
+    ./file-systems.nix
+    ./kernel.nix
     ./loader.nix
+    ./modprobe.nix
     ./plymouth.nix
+    ./tmp.nix
   ];
-
-  boot = {
-    cleanTmpDir = true;
-    extraModprobeConfig = ''
-      options bluetooth disable_ertm=1
-    '';
-    tmpOnTmpfs = true;
-  };
 }

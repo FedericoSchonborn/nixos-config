@@ -12,7 +12,7 @@
     };
 
     extraConfig = {
-      core.editor = "nvim";
+      core.editor = "nano";
       init.defaultBranch = "main";
       push.gpgSign = "if-asked";
       form.signOff = "true";
