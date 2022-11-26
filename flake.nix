@@ -19,6 +19,11 @@
       };
     };
 
+    nil = {
+      url = "github:oxalica/nil";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,6 +37,7 @@
     nixos-hardware,
     home-manager,
     nix-on-droid,
+    nil,
     pre-commit-hooks,
     ...
   } @ inputs: let
@@ -46,11 +52,17 @@
           nixPath = ["nixpkgs=${nixpkgs}"];
         };
 
-        nixpkgs.config.packageOverrides = pkgs: {
-          nur = import nur {
-            nurpkgs = pkgs;
-            inherit pkgs;
+        nixpkgs = {
+          config.packageOverrides = pkgs: {
+            nur = import nur {
+              nurpkgs = pkgs;
+              inherit pkgs;
+            };
           };
+
+          overlays = [
+            nil.overlays.default
+          ];
         };
       }
 

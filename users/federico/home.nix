@@ -11,6 +11,10 @@
 
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
+      # Development
+      # Nix
+      nil
+
       # Games
       prismlauncher
       retroarchFull
@@ -38,6 +42,15 @@
       gnomeExtensions.dash-to-panel
     ];
   };
+
+  home.file.".cargo/config.toml".text = ''
+    [build]
+    rustc-wrapper = "${pkgs.sccache}/bin/sccache"
+
+    [target.x86_64-unknown-linux-gnu]
+    linker = "${pkgs.clang}/bin/clang"
+    rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold}/bin/mold"]
+  '';
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

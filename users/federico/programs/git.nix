@@ -12,7 +12,7 @@
     };
 
     extraConfig = {
-      core.editor = "nano";
+      core.editor = "code --wait";
       init.defaultBranch = "main";
       push.gpgSign = "if-asked";
       form.signOff = "true";

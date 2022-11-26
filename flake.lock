@@ -31,6 +31,21 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "locked": {
+        "lastModified": 1667395993,
+        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "gitignore": {
       "inputs": {
         "nixpkgs": [
@@ -70,6 +85,28 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nil": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1669391194,
+        "narHash": "sha256-4oWcXqyBYPHF+Wt8AxRhWk70O1qVJPkyBw2IhxJtj6k=",
+        "owner": "oxalica",
+        "repo": "nil",
+        "rev": "afec5fed829ee193de7e8c62e1fb4bd55140f4ac",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "nil",
         "type": "github"
       }
     },
@@ -235,11 +272,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1669429343,
-        "narHash": "sha256-cDEIN2WkWK/b3yN9/ZyN/MehFLLANM6GSvRg8UanHl0=",
+        "lastModified": 1669462507,
+        "narHash": "sha256-aPmbfIgF5gcJqurXfBncoxaJmClnBhN8fBMFXmVisqs=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "988a5977b3c4159faea64cf0effb696f3db13143",
+        "rev": "3e01b4cae8759d2d47cac957d2c4ac9a7f7e62d0",
         "type": "github"
       },
       "original": {
@@ -251,7 +288,7 @@
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
-        "flake-utils": "flake-utils",
+        "flake-utils": "flake-utils_2",
         "gitignore": "gitignore",
         "nixpkgs": [
           "nixpkgs"
@@ -275,11 +312,37 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "nil": "nil",
         "nix-on-droid": "nix-on-droid",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nur": "nur",
         "pre-commit-hooks": "pre-commit-hooks"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "flake-utils": [
+          "nil",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nil",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1669170936,
+        "narHash": "sha256-TKPH4Pzkjw5gAPo9hejs3O4mWJW6V/RSiOj8UuSFRTs=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "c90c223c4aef334356029b89c72bb65e26f7efe6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "utils": {
