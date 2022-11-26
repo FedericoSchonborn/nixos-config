@@ -6,7 +6,7 @@
     # - Notifier for GitHub
     # - Side View
     # - Web Archives
-    enchancer-for-youtube
+    enhancer-for-youtube
     multi-account-containers
     firefox-translations
     keepassxc-browser
