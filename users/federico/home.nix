@@ -26,6 +26,7 @@
       # Internet
       discord
       element-desktop
+      thunderbird
 
       # Multimedia
       spotify
@@ -36,10 +37,6 @@
       # Utilities
       keepassxc
       neofetch
-
-      # GNOME Extensions
-      gnomeExtensions.appindicator
-      gnomeExtensions.dash-to-panel
     ];
   };
 

@@ -1,7 +1,6 @@
 {
   imports = [
     ./console.nix
-    ./desktop.nix
     ./environment.nix
     ./file-systems.nix
     ./fonts.nix

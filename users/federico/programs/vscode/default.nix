@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   imports = [
     ./extensions.nix
     ./keybindings.nix
