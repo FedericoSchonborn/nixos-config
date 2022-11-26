@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nur.url = "github:nix-community/NUR";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     home-manager = {
@@ -27,6 +28,7 @@
   outputs = {
     self,
     nixpkgs,
+    nur,
     nixos-hardware,
     home-manager,
     nix-on-droid,
@@ -43,6 +45,12 @@
           registry.nixpkgs.flake = nixpkgs;
           nixPath = ["nixpkgs=${nixpkgs}"];
         };
+
+        nixpkgs.config.packageOverrides = pkgs: {
+          nur = import nur {
+            inherit pkgs;
+          };
+        };
       }
 
       # Home Manager
@@ -51,6 +59,7 @@
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
+          extraSpecialArgs = inputs;
         };
       }
     ];
