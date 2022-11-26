@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   programs.firefox.profiles.default = {
     name = "Default";
+    path = "default";
     search.engines = {
       "NixOS Packages" = {
         urls = [
