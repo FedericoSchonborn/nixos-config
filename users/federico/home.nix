@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
+    ./modules
     ./programs
-    ./services
   ];
 
   home = {
