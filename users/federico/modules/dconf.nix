@@ -35,7 +35,6 @@
         bluetooth-quick-connect.extensionUuid
         blur-my-shell.extensionUuid
         dash-to-panel.extensionUuid
-        desktop-icons-ng-ding.extensionUuid
         gsconnect.extensionUuid
       ];
       favorite-apps = [
@@ -53,6 +52,14 @@
         "code.desktop"
         "org.gnome.Console.desktop"
       ];
+    };
+
+    "org/gnome/shell/extensions/appindicator" = {
+      icon-opacity = true;
+    };
+
+    "org/gnome/shell/extensions/bluetooth-quick-connect" = {
+      show-battery-value-on = true;
     };
 
     "org/gnome/shell/extensions/dash-to-panel" = {

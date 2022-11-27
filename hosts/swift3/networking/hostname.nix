@@ -1,3 +1,3 @@
 {
-  networking.hostName = "swift3";
+  networking.hostName = "Swift-SF314-52";
 }

@@ -9,9 +9,7 @@
     bitwarden
     enhancer-for-youtube
     firefox-translations
-    gnome-shell-integration
     multi-account-containers
-    reddit-enhancement-suite
     refined-github
     rust-search-extension
     search-by-image
