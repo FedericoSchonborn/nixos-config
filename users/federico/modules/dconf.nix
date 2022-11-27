@@ -4,17 +4,28 @@
       theme = "auto";
     };
 
+    "org/gnome/desktop/background" = {
+      picture-uri = "file://${pkgs.gnome.gnome-backgrounds}/share/backgrounds/gnome/adwaita-l.webp";
+      picture-uri-dark = "file://${pkgs.gnome.gnome-backgrounds}/share/backgrounds/gnome/adwaita-d.webp";
+    };
+
     "org/gnome/desktop/datetime" = {
       automatic-timezone = true;
     };
 
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
+      enable-hot-corners = false;
       show-battery-percentage = true;
     };
 
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
+    };
+
+    "org/gnome/desktop/privacy" = {
+      remove-old-trash-files = true;
+      remove-old-temp-files = true;
     };
 
     "org/gnome/desktop/wm/preferences" = {

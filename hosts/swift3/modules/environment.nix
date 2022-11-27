@@ -6,6 +6,7 @@
     with pkgs.gnome; [
       epiphany
       gnome-music
+      gnome-tour
     ];
 
     systemPackages = with pkgs; [
