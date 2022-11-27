@@ -40,7 +40,10 @@
 
       # GNOME Extension
       gnomeExtensions.appindicator
+      gnomeExtensions.bluetooth-quick-connect
+      gnomeExtensions.blur-my-shell
       gnomeExtensions.dash-to-panel
+      gnomeExtensions.desktop-icons-ng-ding
     ];
   };
 
