@@ -1,6 +1,3 @@
 {
-  boot.plymouth = {
-    enable = true;
-    theme = "breeze";
-  };
+  boot.plymouth.enable = true;
 }

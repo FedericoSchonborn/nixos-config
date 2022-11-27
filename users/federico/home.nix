@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    ./modules
     ./programs
     ./services
   ];
@@ -26,7 +25,6 @@
       # Internet
       discord
       element-desktop
-      thunderbird
 
       # Multimedia
       spotify
@@ -35,8 +33,14 @@
       libreoffice-fresh
 
       # Utilities
-      keepassxc
+      bitwarden
+
+      # CLI Tools
       neofetch
+
+      # GNOME Extension
+      gnomeExtensions.appindicator
+      gnomeExtensions.dash-to-panel
     ];
   };
 

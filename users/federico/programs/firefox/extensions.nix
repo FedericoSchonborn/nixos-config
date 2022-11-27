@@ -6,13 +6,14 @@
     # - Notifier for GitHub
     # - Side View
     # - Web Archives
+    bitwarden
     enhancer-for-youtube
-    multi-account-containers
     firefox-translations
-    keepassxc-browser
+    gnome-shell-integration
+    multi-account-containers
+    reddit-enhancement-suite
     refined-github
     rust-search-extension
-    reddit-enhancement-suite
     search-by-image
     ublock-origin
   ];

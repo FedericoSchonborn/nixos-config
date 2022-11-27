@@ -1,3 +1,6 @@
-{
-  programs.kdeconnect.enable = true;
+{pkgs, ...}: {
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.gnomeExtensions.gsconnect;
+  };
 }
