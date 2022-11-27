@@ -1,5 +1,9 @@
 {pkgs, ...}: {
   dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+
     "org/gnome/shell" = {
       enabled-extensions = with pkgs.gnomeExtensions; [
         appindicator.extensionUuid
