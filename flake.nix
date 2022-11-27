@@ -85,7 +85,7 @@
         modules =
           sharedModules
           ++ [
-            ./hosts/swift3
+            ./machines/swift3
             ./users/federico
           ];
       };
@@ -97,7 +97,7 @@
         modules =
           sharedModules
           ++ [
-            ./hosts/zx4250
+            ./machines/zx4250
             ./users/casa
           ];
       };
@@ -109,7 +109,7 @@
         modules =
           sharedModules
           ++ [
-            ./hosts/a32
+            ./machines/a32
           ];
       };
     };
