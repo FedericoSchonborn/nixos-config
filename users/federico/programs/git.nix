@@ -12,7 +12,7 @@
     };
 
     extraConfig = {
-      core.editor = "code --wait";
+      core.editor = "${pkgs.nur.repos.federicoschonborn.commit}/bin/re.sonny.Commit";
       init.defaultBranch = "main";
       push.gpgSign = "if-asked";
       form.signOff = "true";
