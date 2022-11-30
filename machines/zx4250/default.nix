@@ -12,16 +12,7 @@
     (modulesPath + "/installer/scan/not-detected.nix")
     ./boot
     ./services
-    ./desktop.nix
-    ./environment.nix
-    ./file-systems.nix
-    ./fonts.nix
-    ./hardware.nix
-    ./i18n.nix
-    ./networking.nix
-    ./nix.nix
-    ./users.nix
-    ./zram-swap.nix
+    ./modules
   ];
 
   # This value determines the NixOS release from which the default
