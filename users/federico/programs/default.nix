@@ -4,7 +4,6 @@
     ./firefox
     ./gh.nix
     ./git.nix
-    ./nix-index.nix
     ./starship.nix
     ./vscode
     ./zsh.nix
