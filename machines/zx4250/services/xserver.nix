@@ -1,9 +1,26 @@
-{
+{pkgs, ...}: {
   services.xserver = {
     enable = true;
-    displayManager.autoLogin = {
+
+    desktopManager.budgie = {
       enable = true;
-      user = "casa";
+      extraGSettingsOverrides = ''
+        [org.buddiesofbudgie.budgie-desktop-view]
+        show=true
+        click-policy="double"
+      '';
+      extraGSettingsOverridePackages = with pkgs; [
+        budgie.budgie-desktop-view
+      ];
+    };
+
+    displayManager = {
+      lightdm.greeters.slick.enable = true;
+
+      autoLogin = {
+        enable = true;
+        user = "casa";
+      };
     };
   };
 }

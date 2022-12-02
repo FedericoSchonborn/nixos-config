@@ -5,9 +5,6 @@
       efiSysMountPoint = "/boot";
     };
 
-    systemd-boot = {
-      enable = true;
-      editor = false;
-    };
+    systemd-boot.enable = true;
   };
 }

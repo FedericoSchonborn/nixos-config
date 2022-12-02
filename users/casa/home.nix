@@ -13,8 +13,9 @@
     ];
   };
 
-  home.file."Escritorio/google-chrome.desktop" = {
+  home.file."google-chrome.desktop" = {
     source = "${pkgs.google-chrome}/share/applications/google-chrome.desktop";
+    target = "${config.xdg.userDirs.desktop}/google-chrome.desktop";
     executable = true;
   };
 

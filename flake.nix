@@ -19,6 +19,13 @@
       };
     };
 
+    budgie = {
+      url = "github:FedericoSchonborn/budgie-nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     nil = {
       url = "github:oxalica/nil";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,6 +44,7 @@
     nixos-hardware,
     home-manager,
     nix-on-droid,
+    budgie,
     nil,
     pre-commit-hooks,
     ...

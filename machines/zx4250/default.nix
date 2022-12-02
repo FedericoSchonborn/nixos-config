@@ -1,6 +1,7 @@
 {
   modulesPath,
   nixos-hardware,
+  budgie,
   ...
 }: {
   imports = [
@@ -8,6 +9,7 @@
     nixos-hardware.nixosModules.common-gpu-amd
     nixos-hardware.nixosModules.common-pc
     nixos-hardware.nixosModules.common-pc-hdd
+    budgie.nixosModules.default
 
     (modulesPath + "/installer/scan/not-detected.nix")
     ./boot

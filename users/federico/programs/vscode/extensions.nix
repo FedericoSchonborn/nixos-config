@@ -31,8 +31,8 @@
       {
         publisher = "mkhl";
         name = "direnv";
-        version = "0.7.0";
-        sha256 = "MLBPhDBU8vPVvbde3fdwhxKvQa8orUMKAAXoOfNrbh4=";
+        version = "0.10.1";
+        sha256 = "Da9Anme6eoKLlkdYaeLFDXx0aQgrtepuUnw2jEPXCVU=";
       }
       {
         publisher = "piotrpalarz";
@@ -45,6 +45,12 @@
         name = "vscode-yaml";
         version = "1.11.10112022";
         sha256 = "/ZD3LOf6d5dJJW7eGZgkrf4hj1CXZJNI0u06Bnmyo0Q=";
+      }
+      {
+        publisher = "sclu1034";
+        name = "justfile";
+        version = "2.1.0";
+        sha256 = "Gjc9tYwdJ0it/7LYpekh3Bz2lwJd9y4iMpZlVZ2VpDQ=";
       }
       {
         publisher = "tamasfe";
