@@ -30,7 +30,7 @@
       };
 
       extraConfig = {
-        core.editor = "${pkgs.nur.repos.federicoschonborn.commit}/bin/re.sonny.Commit";
+        core.editor = "nano";
         init.defaultBranch = "main";
         push.gpgSign = "if-asked";
         form.signOff = "true";
