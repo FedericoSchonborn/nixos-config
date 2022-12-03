@@ -1,15 +1,13 @@
 {
   imports = [
-    ./console.nix
-    ./environment.nix
+    ./boot.nix
     ./file-systems.nix
     ./fonts.nix
-    ./i18n.nix
-    ./nix.nix
+    ./hardware.nix
+    ./networking.nix
     ./nixpkgs.nix
-    ./power-management.nix
-    ./time.nix
-    ./users.nix
-    ./zram-swap.nix
+    ./programs.nix
+    ./services.nix
+    ./virtualisation.nix
   ];
 }

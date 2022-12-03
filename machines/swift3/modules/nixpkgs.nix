@@ -1,3 +1,5 @@
-{
-  nixpkgs.config.allowUnfree = true;
+{inputs, ...}: {
+  nixpkgs.overlays = [
+    inputs.nil.overlays.default
+  ];
 }

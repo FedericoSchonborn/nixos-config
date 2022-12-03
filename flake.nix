@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
+    nixos-generators.url = "github:nix-community/nixos-generators";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -16,13 +17,6 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
-      };
-    };
-
-    budgie = {
-      url = "github:FedericoSchonborn/budgie-nix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
       };
     };
 
@@ -42,83 +36,34 @@
     nixpkgs,
     nur,
     nixos-hardware,
+    nixos-generators,
     home-manager,
     nix-on-droid,
-    budgie,
     nil,
     pre-commit-hooks,
     ...
   } @ inputs: let
     forAllSystems = nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux"];
-
-    sharedModules = [
-      # Nix
-      {
-        # TODO: Add *all* inputs and substituters here.
-        nix = {
-          registry.nixpkgs.flake = nixpkgs;
-          nixPath = ["nixpkgs=${nixpkgs}"];
-        };
-
-        nixpkgs = {
-          config.packageOverrides = pkgs: {
-            nur = import nur {
-              nurpkgs = pkgs;
-              inherit pkgs;
-            };
-          };
-
-          overlays = [
-            nil.overlays.default
-          ];
-        };
-      }
-
-      # Home Manager
-      home-manager.nixosModules.home-manager
-      {
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          extraSpecialArgs = inputs;
-        };
-      }
-    ];
   in {
     nixosConfigurations = {
       # Acer Swift 3
       swift3 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = inputs;
-        modules =
-          sharedModules
-          ++ [
-            ./machines/swift3
-            ./users/federico
-          ];
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./machines/swift3
+          ./users/federico
+        ];
       };
 
       # Gateway ZX4250
       zx4250 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = inputs;
-        modules =
-          sharedModules
-          ++ [
-            ./machines/zx4250
-            ./users/casa
-          ];
-      };
-    };
-
-    nixOnDroidConfigurations = {
-      # Samsung Galaxy A32 (4G)
-      a32 = nix-on-droid.lib.nixOnDroidConfiguration {
-        modules =
-          sharedModules
-          ++ [
-            ./machines/a32
-          ];
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./machines/zx4250
+          ./users/casa
+        ];
       };
     };
 

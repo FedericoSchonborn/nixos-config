@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
+    ../../home-modules
     ./modules
-    ./programs
   ];
 
   home = {
@@ -10,10 +10,6 @@
 
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
-      # Development
-      # Nix
-      nil
-
       # Games
       prismlauncher
       retroarchFull
@@ -34,15 +30,14 @@
 
       # Utilities
       bitwarden
+      bitwarden-cli
 
       # CLI Tools
       neofetch
 
-      # GNOME Extension
-      gnomeExtensions.appindicator
-      gnomeExtensions.bluetooth-quick-connect
-      gnomeExtensions.blur-my-shell
-      gnomeExtensions.dash-to-panel
+      # Development
+      # Nix
+      nil
     ];
   };
 
@@ -54,14 +49,4 @@
     linker = "${pkgs.clang}/bin/clang"
     rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold}/bin/mold"]
   '';
-
-  # This value determines the Home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new Home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update Home Manager without changing this value. See
-  # the Home Manager release notes for a list of state version
-  # changes in each release.
-  home.stateVersion = "23.05"; # Did you read the comment?
 }

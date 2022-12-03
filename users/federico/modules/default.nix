@@ -1,6 +1,5 @@
 {
   imports = [
-    ./dconf.nix
-    ./gtk.nix
+    ./programs.nix
   ];
 }
