@@ -7,6 +7,7 @@
     ./networking.nix
     ./programs.nix
     ./services.nix
+    ./users.nix
     ./virtualisation.nix
   ];
 }

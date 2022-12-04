@@ -21,10 +21,10 @@
     ...
   } @ inputs: let
     forAllSystems = nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux"];
-  in {
-    nixosConfigurations = {
+
+    machines = {
       # Acer Swift 3
-      swift3 = nixpkgs.lib.nixosSystem {
+      swift3 = {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
@@ -34,7 +34,7 @@
       };
 
       # Gateway ZX4250
-      zx4250 = nixpkgs.lib.nixosSystem {
+      zx4250 = {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
@@ -42,6 +42,38 @@
           ./users/casa
         ];
       };
+    };
+
+    isoModules = [
+      "${nixpkgs}/nixos/modules/installer/cd-dvd/iso-image.nix"
+      ({config, ...}: {
+        isoImage = {
+          isoBaseName = "nixos-${config.networking.hostName}-${config.system.nixos.label}";
+          squashfsCompression = "zstd -Xcompression-level 1";
+          makeEfiBootable = true;
+          makeUsbBootable = true;
+        };
+      })
+    ];
+
+    isoImagePackage = machine:
+      (nixpkgs.lib.nixosSystem {
+        inherit (machine) system specialArgs;
+        modules = machine.modules ++ isoModules;
+      })
+      .config
+      .system
+      .build
+      .isoImage;
+  in {
+    nixosConfigurations = {
+      swift3 = nixpkgs.lib.nixosSystem machines.swift3;
+      zx4250 = nixpkgs.lib.nixosSystem machines.zx4250;
+    };
+
+    packages.x86_64 = {
+      swift3-iso = isoImagePackage machines.swift3;
+      zx4250-iso = isoImagePackage machines.zx4250;
     };
 
     devShells = forAllSystems (system: let

@@ -1,0 +1,31 @@
+name: Build ISO
+
+on:
+  push:
+
+jobs:
+  check:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - machine: swift3
+            hostname: SF314-52
+          - machine: zx4250
+            hostname: ZX4250
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v18
+
+      - name: Build ISO
+        run: nix build --print-build-logs ".#${{ matrix.machine }}-iso"
+
+      - name: Upload ISO
+        uses: actions/upload-artifact@v3
+        with:
+          name: nixos-${{ matrix.hostname }}.iso
+          path: ./result/iso/*.iso
