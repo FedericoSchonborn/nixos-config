@@ -21,11 +21,15 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@v18
 
+      - name: Install jq
+        run: nix profile install nixpkgs#jq
+
       - name: Build ISO
-        run: nix build --print-build-logs ".#${{ matrix.machine }}-iso"
+        run: |
+          echo "OUT_PATH=$(nix build --print-build-logs --json .#${{ matrix.machine }}-iso | jq -r '.[0].outputs.out')" >> $GITHUB_ENV
 
       - name: Upload ISO
         uses: actions/upload-artifact@v3
         with:
           name: nixos-${{ matrix.hostname }}.iso
-          path: ./result/iso/*.iso
+          path: ${{ env.OUT_PATH }}
