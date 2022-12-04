@@ -71,7 +71,7 @@
       zx4250 = nixpkgs.lib.nixosSystem machines.zx4250;
     };
 
-    packages.x86_64 = {
+    packages.x86_64-linux = {
       swift3-iso = isoImagePackage machines.swift3;
       zx4250-iso = isoImagePackage machines.zx4250;
     };
