@@ -34,10 +34,6 @@
 
       # CLI Tools
       neofetch
-
-      # Development
-      # Nix
-      nil
     ];
   };
 

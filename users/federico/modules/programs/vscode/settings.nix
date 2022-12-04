@@ -17,6 +17,7 @@
     "git.enableCommitSigning" = true;
     "git.verboseCommit" = true;
     "terminal.integrated.smoothScrolling" = true;
+    "terminal.integrated.tabs.location" = "left";
     "window.menuBarVisibility" = "toggle";
     "window.titleBarStyle" = "custom";
     "workbench.colorTheme" = "Gruvbox Dark Medium";
