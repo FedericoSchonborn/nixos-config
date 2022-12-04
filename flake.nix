@@ -49,7 +49,8 @@
       ({config, ...}: {
         isoImage = {
           isoBaseName = "nixos-${config.networking.hostName}-${config.system.nixos.label}";
-          squashfsCompression = "zstd -Xcompression-level 1";
+          compressImage = true;
+          squashfsCompression = "zstd -Xcompression-level 22";
           makeEfiBootable = true;
           makeUsbBootable = true;
         };
