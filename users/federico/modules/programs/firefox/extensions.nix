@@ -10,6 +10,7 @@
     enhancer-for-youtube
     firefox-translations
     multi-account-containers
+    plasma-integration
     refined-github
     rust-search-extension
     search-by-image

@@ -1,5 +1,7 @@
 {pkgs, ...}: {
   programs.firefox.profiles.default = {
+    name = "Default";
+
     search = {
       engines = {
         "NixOS Packages" = {
@@ -21,6 +23,7 @@
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
           definedAliases = ["@nixpkgs"];
         };
+
         "NixOS Options" = {
           urls = [
             {
@@ -41,7 +44,13 @@
           definedAliases = ["@nixopts"];
         };
       };
+
       default = "Google";
+    };
+
+    settings = {
+      "browser.tabs.inTitlebar" = true;
+      "browser.toolbars.bookmarks.visibility" = "always";
     };
   };
 }
