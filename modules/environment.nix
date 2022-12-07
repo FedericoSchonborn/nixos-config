@@ -2,13 +2,16 @@
   environment = {
     localBinInPath = true;
 
-    systemPackages = with pkgs // pkgs.plasma5Packages; [
+    systemPackages = with pkgs // pkgs.libsForQt5; [
       # Graphics
       kamoso
       skanlite
 
       # Multimedia
       vlc
+
+      # System
+      yakuake
 
       # Utilities
       ark
