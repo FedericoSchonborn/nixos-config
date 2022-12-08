@@ -41,6 +41,7 @@ in {
       (mkExtension "sclu1034.justfile" "2.1.0" "Gjc9tYwdJ0it/7LYpekh3Bz2lwJd9y4iMpZlVZ2VpDQ=")
       (mkExtension "streetsidesoftware.code-spell-checker" "2.11.1" "o6Se+xpqwrdJIMnVE/HaDGIoDqZkeX0nTGHa8GjaqVQ=")
       (mkExtension "tamasfe.even-better-toml" "0.19.0" "MqSQarNThbEf1wHDTf1yA46JMhWJN46b08c7tV6+1nU=")
+      (mkExtension "timonwong.shellcheck" "0.29.1" "BLjCxoePUeKIMrZ6+wRCQRaItgyR+CtdNPxdwpVHdCo=")
       (mkExtension "ultram4rine.vscode-choosealicense" "0.9.0" "m60comJWcMEtWzf4y5o33/4I0nGiko4pXHC7YufoKY0=")
       (mkExtension "usernamehw.errorlens" "3.6.0" "oNzB81mPZjEwrqbeFMvTlXERXrYBpF03EH9ZXz/daOs=")
       (mkExtension "wmaurer.change-case" "1.0.0" "tN/jlG2PzuiCeERpgQvdqDoa3UgrUaM7fKHv6KFqujc=")

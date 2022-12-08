@@ -10,6 +10,9 @@
       100
     ];
     "explorer.confirmDragAndDrop" = false;
+    "files.associations" = {
+      ".envrc" = "shellscript";
+    };
     "files.insertFinalNewline" = true;
     "files.trimFinalNewlines" = true;
     "files.trimTrailingWhitespace" = true;
