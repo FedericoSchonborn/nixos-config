@@ -16,6 +16,7 @@ in {
       rust-lang.rust-analyzer
     ]
     ++ (extensionsFromVscodeMarketplace [
+      (mkExtension "bbenoist.qml" "1.0.0" "tphnVlD5LA6Au+WDrLZkAxnMJeTCd3UTyTN1Jelditk=")
       (mkExtension "bierner.emojisense" "0.9.1" "bfhImi2qMHWkgKqkoStS0NtbXTfj6GpcLkI0PSMjuvg=")
       (mkExtension "bierner.markdown-checkbox" "0.4.0" "AoPcdN/67WOzarnF+GIx/nans38Jan8Z5D0StBWIbkk=")
       (mkExtension "bierner.markdown-emoji" "0.3.0" "rw8/HeDA8kQuiPVDpeOGw1Mscd6vn4utw1Qznsd8lVI=")
@@ -35,6 +36,8 @@ in {
       (mkExtension "jnoortheen.nix-ide" "0.2.1" "yC4ybThMFA2ncGhp8BYD7IrwYiDU3226hewsRvJYKy4=")
       (mkExtension "mkhl.direnv" "0.10.1" "Da9Anme6eoKLlkdYaeLFDXx0aQgrtepuUnw2jEPXCVU=")
       (mkExtension "ms-ceintl.vscode-language-pack-es" "1.74.11300938" "WCorsJUvDinwB0UAkHJoit0rLOWpN4Mba6ItDJKN64o=")
+      (mkExtension "ms-vscode.cmake-tools" "1.12.27" "Q5QpVusHt0qgWwbn7Xrgk8hGh/plTx/Z4XwxISnm72s=")
+      (mkExtension "ms-vscode.cpptools" "1.13.6" "eoj8qnOCJg1FT8DP1a8kOH0PEcU5GwVi86bzwDmXn14=")
       (mkExtension "ms-vscode.remote-repositories" "0.24.0" "uJXobug3q5kpFjWLhejM1Fta6vtAoksHuahFeAnW8nE=")
       (mkExtension "piotrpalarz.vscode-gitignore-generator" "1.0.3" "eqNjkoXXkcbtMDr2ndThqQ2qRFPw1ucQi6hv0eCBw3k=")
       (mkExtension "redhat.vscode-yaml" "1.11.10112022" "/ZD3LOf6d5dJJW7eGZgkrf4hj1CXZJNI0u06Bnmyo0Q=")
@@ -42,6 +45,7 @@ in {
       (mkExtension "streetsidesoftware.code-spell-checker" "2.11.1" "o6Se+xpqwrdJIMnVE/HaDGIoDqZkeX0nTGHa8GjaqVQ=")
       (mkExtension "tamasfe.even-better-toml" "0.19.0" "MqSQarNThbEf1wHDTf1yA46JMhWJN46b08c7tV6+1nU=")
       (mkExtension "timonwong.shellcheck" "0.29.1" "BLjCxoePUeKIMrZ6+wRCQRaItgyR+CtdNPxdwpVHdCo=")
+      (mkExtension "twxs.cmake" "0.0.17" "CFiva1AO/oHpszbpd7lLtDzbv1Yi55yQOQPP/kCTH4Y=")
       (mkExtension "ultram4rine.vscode-choosealicense" "0.9.0" "m60comJWcMEtWzf4y5o33/4I0nGiko4pXHC7YufoKY0=")
       (mkExtension "usernamehw.errorlens" "3.6.0" "oNzB81mPZjEwrqbeFMvTlXERXrYBpF03EH9ZXz/daOs=")
       (mkExtension "wmaurer.change-case" "1.0.0" "tN/jlG2PzuiCeERpgQvdqDoa3UgrUaM7fKHv6KFqujc=")

@@ -23,6 +23,7 @@
       userName = "Federico Damián Schonborn";
       userEmail = "fdschonborn@gmail.com";
       aliases.amend = "commit --amend";
+      delta.enable = true;
 
       signing = {
         key = "193F70F15C9AB0A0";
