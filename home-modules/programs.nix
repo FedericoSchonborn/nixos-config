@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs = {
     home-manager.enable = true;
 
@@ -13,6 +13,9 @@
       enableCompletion = true;
       enableSyntaxHighlighting = true;
       historySubstringSearch.enable = true;
+      initExtra = ''
+        ${pkgs.neofetch}/bin/neofetch
+      '';
 
       oh-my-zsh = {
         enable = true;

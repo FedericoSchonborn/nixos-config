@@ -5,6 +5,7 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    inputs.budgie.nixosModules.budgie
 
     (modulesPath + "/installer/scan/not-detected.nix")
     ./boot.nix

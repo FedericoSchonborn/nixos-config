@@ -21,7 +21,6 @@
       # Internet
       discord
       element-desktop
-      nur.repos.federicoschonborn.tokodon
 
       # Multimedia
       spotify
@@ -34,7 +33,6 @@
       bitwarden-cli
 
       # CLI Tools
-      neofetch
       git-extras
     ];
   };

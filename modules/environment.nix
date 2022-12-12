@@ -1,23 +1,9 @@
 {pkgs, ...}: {
   environment = {
     localBinInPath = true;
+    pathsToLink = ["/share/zsh"];
 
     systemPackages = with pkgs // pkgs.libsForQt5; [
-      # Graphics
-      kamoso
-      skanlite
-
-      # Multimedia
-      vlc
-
-      # System
-      yakuake
-
-      # Utilities
-      ark
-      kate
-
-      # Other
       # Dictionaries
       aspellDicts.es
       hunspellDicts.es-ar

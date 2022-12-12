@@ -10,6 +10,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    budgie = {
+      url = "github:FedericoSchonborn/budgie-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -98,5 +103,14 @@
     });
 
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+  };
+
+  nixConfig = {
+    extra-substituters = [
+      "https://budgie.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "budgie.cachix.org-1:Q8+2iOIXhwAaWq548T+r/oNeJdKEacolRY9sBBtOfeQ="
+    ];
   };
 }

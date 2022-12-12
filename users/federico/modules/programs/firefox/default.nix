@@ -4,12 +4,5 @@
     ./profiles.nix
   ];
 
-  programs.firefox = {
-    enable = true;
-    package = pkgs.firefox.override {
-      cfg = {
-        enablePlasmaBrowserIntegration = true;
-      };
-    };
-  };
+  programs.firefox.enable = true;
 }

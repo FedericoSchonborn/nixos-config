@@ -1,7 +1,6 @@
 name: Build ISO
 
-on:
-  push:
+on: workflow_dispatch
 
 jobs:
   check:

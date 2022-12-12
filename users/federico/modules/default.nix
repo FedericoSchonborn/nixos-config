@@ -1,6 +1,5 @@
 {
   imports = [
     ./programs
-    ./xdg.nix
   ];
 }
