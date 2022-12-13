@@ -8,11 +8,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1670877247,
-        "narHash": "sha256-WLx3COikikWcbg2dzJJpGEU+nwjO4sVvyXFcjNVw0+0=",
+        "lastModified": 1670890755,
+        "narHash": "sha256-2CrteBycobvhhsvue4h1i7OscbM7usxwCduAwSC5bfU=",
         "owner": "FedericoSchonborn",
         "repo": "budgie-nix",
-        "rev": "8a6db4986f16c885a9c1a905fcab3c5b9e21a02b",
+        "rev": "ad787afeb9b2f0bbd7995cb241bb1109976d7f81",
         "type": "github"
       },
       "original": {
