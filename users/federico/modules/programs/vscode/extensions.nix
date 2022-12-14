@@ -34,6 +34,7 @@ in {
       (mkExtension "jdinhlife.gruvbox" "1.8.0" "P4FbbcRcKWbnC86TSnzQaGn2gHWkDM9I4hj4GiHNPS4=")
       (mkExtension "jnoortheen.nix-ide" "0.2.1" "yC4ybThMFA2ncGhp8BYD7IrwYiDU3226hewsRvJYKy4=")
       (mkExtension "mkhl.direnv" "0.10.1" "Da9Anme6eoKLlkdYaeLFDXx0aQgrtepuUnw2jEPXCVU=")
+      (mkExtension "ms-azuretools.vscode-docker" "1.23.2" "R2pO9TfyADraQxtw5NP09Qew5MBC4tSJ0Ekb3x2E5ZA=")
       (mkExtension "ms-ceintl.vscode-language-pack-es" "1.74.11300938" "WCorsJUvDinwB0UAkHJoit0rLOWpN4Mba6ItDJKN64o=")
       (mkExtension "ms-vscode.remote-repositories" "0.24.0" "uJXobug3q5kpFjWLhejM1Fta6vtAoksHuahFeAnW8nE=")
       (mkExtension "piotrpalarz.vscode-gitignore-generator" "1.0.3" "eqNjkoXXkcbtMDr2ndThqQ2qRFPw1ucQi6hv0eCBw3k=")
