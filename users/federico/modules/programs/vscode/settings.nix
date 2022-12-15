@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.vscode.userSettings = {
     "editor.fontFamily" = "Cascadia Code";
     "editor.fontLigatures" = true;
@@ -31,15 +31,18 @@
     # Choose a License
     "license.author" = "Federico Damián Schonborn <fdschonborn@gmail.com>";
     "license.default" = "bsd-3-clause";
-
-    # Rust Analyzer
-    "rust-analyzer.checkOnSave.command" = "clippy";
-
     # Nix IDE
     "nix.enableLanguageServer" = true;
-    "nix.serverPath" = "nil";
+    "nix.serverPath" = "${pkgs.nil}/bin/nil";
     "nix.serverSettings" = {
       nil.formatting.command = ["nix" "fmt" "--" "-"];
     };
+    # Rust Analyzer
+    "rust-analyzer.checkOnSave.command" = "clippy";
+    "rust-analyzer.server.path" = "${pkgs.rust-analyzer}/bin/rust-analyzer";
+    # Shellcheck
+    "shellcheck.executablePath" = "${pkgs.shellcheck}/bin/shellcheck";
+    # Vala
+    "vala.languageServerPath" = "${pkgs.vala-language-server}/bin/vala-language-server";
   };
 }

@@ -86,20 +86,14 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       default = pkgs.mkShell {
-        nativeBuildInputs = with pkgs; [
+        packages = with pkgs; [
           just
-          nil
-          alejandra
-          statix
         ];
-
-        shellHook = ''
-          just --version
-          nil --version
-          alejandra --version
-          statix --version
-        '';
       };
+
+      shellHook = ''
+        just --version
+      '';
     });
 
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
