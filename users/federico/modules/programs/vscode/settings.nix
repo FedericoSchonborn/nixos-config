@@ -23,7 +23,7 @@
     "terminal.integrated.tabs.location" = "left";
     "window.menuBarVisibility" = "toggle";
     "window.titleBarStyle" = "custom";
-    "workbench.colorTheme" = "Gruvbox Light Medium";
+    "workbench.colorTheme" = "Gruvbox Dark Medium";
     "workbench.iconTheme" = "file-icons";
     "workbench.preferredDarkColorTheme" = "Gruvbox Dark Medium";
     "workbench.preferredLightColorTheme" = "Gruvbox Light Medium";

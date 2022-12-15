@@ -21,6 +21,7 @@
       # Internet
       discord
       element-desktop
+      thunderbird
 
       # Multimedia
       spotify
