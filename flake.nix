@@ -89,11 +89,11 @@
         packages = with pkgs; [
           just
         ];
-      };
 
-      shellHook = ''
-        just --version
-      '';
+        shellHook = ''
+          just --version
+        '';
+      };
     });
 
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
