@@ -17,15 +17,8 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    nur,
-    nixos-hardware,
-    home-manager,
-    ...
-  } @ inputs: let
-    forAllSystems = nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux"];
+  outputs = {nixpkgs, ...} @ inputs: let
+    forAllSystems = f: nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux"] (system: f nixpkgs.legacyPackages.${system});
 
     machines = {
       # Acer Swift 3
@@ -82,9 +75,7 @@
       zx4250-iso = isoImagePackage machines.zx4250;
     };
 
-    devShells = forAllSystems (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    devShells = forAllSystems (pkgs: {
       default = pkgs.mkShell {
         packages = with pkgs; [
           just
@@ -96,7 +87,7 @@
       };
     });
 
-    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+    formatter = forAllSystems (pkgs: pkgs.alejandra);
   };
 
   nixConfig = {

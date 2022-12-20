@@ -32,6 +32,7 @@
       # Utilities
       bitwarden
       bitwarden-cli
+      proton-caller
 
       # CLI Tools
       git-extras

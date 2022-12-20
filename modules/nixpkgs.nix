@@ -12,7 +12,7 @@
     };
 
     overlays = [
-      inputs.budgie.overlays.budgie
+      inputs.budgie.overlays.default
     ];
   };
 }

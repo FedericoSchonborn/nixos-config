@@ -42,6 +42,8 @@
     "rust-analyzer.server.path" = "${pkgs.rust-analyzer}/bin/rust-analyzer";
     # Shellcheck
     "shellcheck.executablePath" = "${pkgs.shellcheck}/bin/shellcheck";
+    # shfmt
+    "shfmt.executablePath" = "${pkgs.shfmt}/bin/shfmt";
     # Vala
     "vala.languageServerPath" = "${pkgs.vala-language-server}/bin/vala-language-server";
   };

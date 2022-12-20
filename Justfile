@@ -9,12 +9,8 @@
 
 # Switch to a system configuration.
 @switch HOST:
-    sudo nixos-rebuild switch --flake ".#{{ HOST }}" --verbose
+    sudo nixos-rebuild switch --print-build-logs --flake ".#{{ HOST }}"
 
 # Build virtual machine for a system configuration.
 @build-vm HOST:
     nix build --print-build-logs ".#nixosConfigurations.{{ HOST }}.config.system.build.vm"
-
-# Run checks on this Flake.
-@check:
-    nix flake check --no-build
