@@ -12,10 +12,18 @@
 
     xserver = {
       enable = true;
-      excludePackages = [pkgs.xterm];
+      excludePackages = with pkgs; [
+        xterm
+      ];
       layout = "latam";
       libinput.enable = true;
-      desktopManager.budgie.enable = true;
+
+      desktopManager.budgie = {
+        enable = true;
+        pluginPackages = with pkgs; [
+          budgiePlugins.budgie-screenshot-applet
+        ];
+      };
     };
 
     printing = {
