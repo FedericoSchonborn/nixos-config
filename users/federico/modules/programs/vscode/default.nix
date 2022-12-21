@@ -8,6 +8,6 @@
   programs.vscode = {
     enable = true;
     enableUpdateCheck = false;
-    mutableExtensionsDir = false;
+    mutableExtensionsDir = true;
   };
 }
