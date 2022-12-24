@@ -31,6 +31,13 @@
     # Choose a License
     "license.author" = "Federico Damián Schonborn <fdschonborn@gmail.com>";
     "license.default" = "bsd-3-clause";
+    # Go
+    "go.alternateTools" = {
+      "dlv" = "${pkgs.delve}/bin/dlv";
+      "gopls" = "${pkgs.gopls}/bin/gopls";
+    };
+    # Lua
+    "Lua.misc.executablePath" = "${pkgs.sumneko-lua-language-server}/bin/lua-language-server";
     # Nix IDE
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "${pkgs.nil}/bin/nil";
