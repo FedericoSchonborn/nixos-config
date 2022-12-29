@@ -12,7 +12,7 @@
     packages = with pkgs; [
       # Games
       prismlauncher
-      retroarchFull
+      retroarch # TODO: Add cores.
 
       # Graphics
       gimp

@@ -45,7 +45,6 @@ in {
     (mkExtension "pdesaulniers.vscode-teal" "0.8.3" "sha256-yI6bkPN84AwcCtWCUwn+aCXI8u0DhnnZvAl6T4dqefE=")
     (mkExtension "piotrpalarz.vscode-gitignore-generator" "1.0.3" "sha256-eqNjkoXXkcbtMDr2ndThqQ2qRFPw1ucQi6hv0eCBw3k=")
     (mkExtension "prince781.vala" "1.0.8" "sha256-IuIb7vLNiE3rzVHOsjInaYLzNYORbwabQq0bfaPLlqc=")
-    (mkExtension "redhat.vscode-xml" "0.23.0" "sha256-UMZBp8yYXQUcyCPClK8W4S/hf+BJxChE95HzCa0UQh8=")
     (mkExtension "redhat.vscode-yaml" "1.10.1" "sha256-BZHU9FrFqsO09fllMF3+vszrGnPrfQmhVgpcNQhPv/w=")
     (mkExtension "rust-lang.rust-analyzer" "0.3.1325" "sha256-V8ZklV2yHtsLgKY4DU+QzZMMkFdokSoP8tC9A40qeGA=")
     (mkExtension "sclu1034.justfile" "2.1.0" "sha256-Gjc9tYwdJ0it/7LYpekh3Bz2lwJd9y4iMpZlVZ2VpDQ=")
