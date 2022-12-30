@@ -11,6 +11,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     budgie = {
       url = "github:FedericoSchonborn/budgie-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,8 +52,7 @@
       ({config, ...}: {
         isoImage = {
           isoBaseName = "nixos-${config.networking.hostName}-${config.system.nixos.label}";
-          compressImage = true;
-          squashfsCompression = "zstd -Xcompression-level 22";
+          compressImage = false;
           makeEfiBootable = true;
           makeUsbBootable = true;
         };
@@ -79,6 +83,7 @@
       default = pkgs.mkShell {
         packages = with pkgs; [
           just
+          inputs.agenix.packages.${pkgs.system}.agenix
         ];
 
         shellHook = ''

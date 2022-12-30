@@ -6,6 +6,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.budgie.nixosModules.budgie
+    inputs.agenix.nixosModules.age
 
     (modulesPath + "/installer/scan/not-detected.nix")
     ./boot.nix
