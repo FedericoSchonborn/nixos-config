@@ -22,7 +22,11 @@
     };
   };
 
-  outputs = {nixpkgs, ...} @ inputs: let
+  outputs = {
+    nixpkgs,
+    agenix,
+    ...
+  } @ inputs: let
     forAllSystems = f: nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux"] (system: f nixpkgs.legacyPackages.${system});
 
     machines = {
@@ -83,7 +87,7 @@
       default = pkgs.mkShell {
         packages = with pkgs; [
           just
-          inputs.agenix.packages.${pkgs.system}.agenix
+          agenix.packages.${pkgs.system}.agenix
         ];
 
         shellHook = ''
