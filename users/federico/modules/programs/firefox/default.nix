@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    ./extensions.nix
     ./profiles.nix
   ];
 
