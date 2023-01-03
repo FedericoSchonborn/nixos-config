@@ -5,6 +5,7 @@
     ./fonts.nix
     ./hardware.nix
     ./networking.nix
+    ./power-management.nix
     ./programs.nix
     ./services.nix
     ./users.nix

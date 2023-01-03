@@ -1,7 +1,10 @@
-{inputs, ...}: {
+{self, ...}: {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {
+      inherit self;
+      inherit (self) inputs;
+    };
   };
 }

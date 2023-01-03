@@ -1,13 +1,24 @@
 {pkgs, ...}: {
   environment = {
     localBinInPath = true;
-    pathsToLink = ["/share/zsh"];
+    pathsToLink = [
+      # Zsh completions.
+      "/share/zsh"
+    ];
 
     systemPackages = with pkgs // pkgs.libsForQt5; [
-      # Tools
-      p7zip
-      unzip
-      unrar
+      # Graphics
+      kamoso
+      skanlite
+
+      # Multimedia
+      vlc
+
+      # Utilities
+      ark
+      kate
+
+      # Other
       # Dictionaries
       aspellDicts.es
       hunspellDicts.es-ar

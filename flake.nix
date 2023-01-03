@@ -15,14 +15,10 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    budgie = {
-      url = "github:FedericoSchonborn/budgie-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
+    self,
     nixpkgs,
     agenix,
     ...
@@ -33,7 +29,7 @@
       # Acer Swift 3
       swift3 = {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit self;} // inputs;
         modules = [
           ./machines/swift3
           ./users/federico
@@ -43,13 +39,15 @@
       # Gateway ZX4250
       zx4250 = {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit self;} // inputs;
         modules = [
           ./machines/zx4250
           ./users/casa
         ];
       };
     };
+
+    # TODO: nix-on-droid for A325M.
 
     isoModules = [
       "${nixpkgs}/nixos/modules/installer/cd-dvd/iso-image.nix"
@@ -91,20 +89,11 @@
         ];
 
         shellHook = ''
-          just --version
+          just --list
         '';
       };
     });
 
     formatter = forAllSystems (pkgs: pkgs.alejandra);
-  };
-
-  nixConfig = {
-    extra-substituters = [
-      "https://budgie.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "budgie.cachix.org-1:Q8+2iOIXhwAaWq548T+r/oNeJdKEacolRY9sBBtOfeQ="
-    ];
   };
 }

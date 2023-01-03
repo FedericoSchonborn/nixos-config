@@ -1,14 +1,14 @@
 {
   modulesPath,
-  inputs,
+  home-manager,
+  agenix,
   ...
 }: {
   imports = [
-    inputs.home-manager.nixosModules.home-manager
-    inputs.budgie.nixosModules.budgie
-    inputs.agenix.nixosModules.age
+    home-manager.nixosModules.home-manager
+    agenix.nixosModules.age
 
-    (modulesPath + "/installer/scan/not-detected.nix")
+    "${modulesPath}/installer/scan/not-detected.nix"
     ./boot.nix
     ./console.nix
     ./environment.nix
@@ -19,7 +19,6 @@
     ./networking.nix
     ./nix.nix
     ./nixpkgs.nix
-    ./power-management.nix
     ./programs.nix
     ./security.nix
     ./services.nix

@@ -1,13 +1,13 @@
 {
   modulesPath,
-  inputs,
+  nixos-hardware,
   ...
 }: {
   imports = [
-    inputs.nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
-    inputs.nixos-hardware.nixosModules.common-gpu-intel
-    inputs.nixos-hardware.nixosModules.common-pc-laptop
-    inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
+    nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
+    nixos-hardware.nixosModules.common-gpu-intel
+    nixos-hardware.nixosModules.common-pc-laptop
+    nixos-hardware.nixosModules.common-pc-laptop-ssd
 
     ../../modules
     ./modules

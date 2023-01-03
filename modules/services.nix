@@ -18,11 +18,14 @@
       layout = "latam";
       libinput.enable = true;
 
-      desktopManager.budgie = {
+      desktopManager.plasma5 = {
         enable = true;
-        pluginPackages = with pkgs; [
-          budgiePlugins.budgie-screenshot-applet
-        ];
+        phononBackend = "vlc";
+      };
+
+      displayManager = {
+        sddm.enable = true;
+        defaultSession = "plasmawayland";
       };
     };
 
@@ -32,7 +35,4 @@
       webInterface = false;
     };
   };
-
-  # Required by Pipewire.
-  hardware.pulseaudio.enable = false;
 }
