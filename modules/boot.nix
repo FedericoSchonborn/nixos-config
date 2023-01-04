@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     supportedFilesystems = ["exfat" "ntfs"];
@@ -6,7 +10,7 @@
     tmpOnTmpfs = true;
 
     loader = {
-      timeout = 0;
+      timeout = lib.mkForce 0;
 
       efi = {
         canTouchEfiVariables = true;

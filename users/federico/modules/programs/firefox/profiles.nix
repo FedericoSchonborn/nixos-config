@@ -65,7 +65,7 @@
     };
 
     settings = {
-      "browser.tabs.inTitlebar" = true;
+      "browser.tabs.inTitlebar" = 1;
       "browser.search.region" = "AR";
       "browser.toolbars.bookmarks.visibility" = "always";
       "intl.locale.requested" = "es-AR,en-US";

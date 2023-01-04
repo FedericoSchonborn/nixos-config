@@ -9,6 +9,7 @@
     agenix.nixosModules.age
 
     "${modulesPath}/installer/scan/not-detected.nix"
+    ./age.nix
     ./boot.nix
     ./console.nix
     ./environment.nix

@@ -37,14 +37,18 @@
       # CLI Tools
       git-extras
     ];
+
+    file.".cargo/config.toml".text = ''
+      [build]
+      rustc-wrapper = "${pkgs.sccache}/bin/sccache"
+
+      [target.x86_64-unknown-linux-gnu]
+      linker = "${pkgs.clang}/bin/clang"
+      rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold}/bin/mold"]
+    '';
+
+    sessionVariables = {
+      MOZ_ENABLE_WAYLAND = 1;
+    };
   };
-
-  home.file.".cargo/config.toml".text = ''
-    [build]
-    rustc-wrapper = "${pkgs.sccache}/bin/sccache"
-
-    [target.x86_64-unknown-linux-gnu]
-    linker = "${pkgs.clang}/bin/clang"
-    rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold}/bin/mold"]
-  '';
 }
