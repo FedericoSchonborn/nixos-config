@@ -41,6 +41,26 @@
         "type": "github"
       }
     },
+    "nix-index-database": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1672543420,
+        "narHash": "sha256-n6hatHjbTmylU4w8ZMrPZQTOrgUgCWthGUFC3BMBvuw=",
+        "owner": "Mic92",
+        "repo": "nix-index-database",
+        "rev": "83976f98374a2cbf02de1b4a3f93fdc359e457cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "nix-index-database",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1672644464,
@@ -74,11 +94,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1672782814,
-        "narHash": "sha256-FgdhtReNHr+4Wan4k+yDA5a7AhjYGX/2LNOPI1lb1xI=",
+        "lastModified": 1672875891,
+        "narHash": "sha256-5A4e/Uc6aWQmMsYnMOffLg766weMfCakxo2AnQXrJco=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "570185bc4758e6e6a630b059072c617195e71e1e",
+        "rev": "e14930ece703757a928cb62327d4157bb30a7a90",
         "type": "github"
       },
       "original": {
@@ -91,6 +111,7 @@
       "inputs": {
         "agenix": "agenix",
         "home-manager": "home-manager",
+        "nix-index-database": "nix-index-database",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nur": "nur"

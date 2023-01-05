@@ -2,11 +2,13 @@
   modulesPath,
   home-manager,
   agenix,
+  nix-index-database,
   ...
 }: {
   imports = [
     home-manager.nixosModules.home-manager
     agenix.nixosModules.age
+    nix-index-database.nixosModules.nix-index
 
     "${modulesPath}/installer/scan/not-detected.nix"
     ./age.nix
