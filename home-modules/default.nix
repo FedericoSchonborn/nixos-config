@@ -1,9 +1,5 @@
-{plasma-manager,...}:{
+{
   imports = [
-    plasma-manager.homeManagerModules.plasma-manager
-
-    ./gtk.nix
-    ./xdg.nix
     ./programs.nix
   ];
 

@@ -1,5 +1,6 @@
 {
   imports = [
     ./programs
+    ./dconf.nix
   ];
 }

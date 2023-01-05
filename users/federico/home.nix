@@ -22,7 +22,6 @@
       # Internet
       discord
       element-desktop
-      thunderbird
 
       # Multimedia
       spotify
@@ -36,6 +35,11 @@
 
       # CLI Tools
       git-extras
+
+      # GNOME Extensions
+      gnomeExtensions.appindicator
+      gnomeExtensions.bluetooth-quick-connect
+      gnomeExtensions.dash-to-panel
     ];
 
     file.".cargo/config.toml".text = ''

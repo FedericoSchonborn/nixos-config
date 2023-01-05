@@ -6,17 +6,19 @@
       "/share/zsh"
     ];
 
+    gnome.excludePackages = with pkgs // pkgs.gnome; [
+      # Replaced by Firefox and Google Chrome.
+      epiphany
+      # Replaced by Amberol.
+      gnome-music
+      # Replaced by Clapper.
+      totem
+    ];
+
     systemPackages = with pkgs // pkgs.libsForQt5; [
-      # Graphics
-      kamoso
-      skanlite
-
       # Multimedia
-      vlc
-
-      # Utilities
-      ark
-      kate
+      amberol
+      clapper
 
       # Other
       # Dictionaries

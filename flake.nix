@@ -20,14 +20,6 @@
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    plasma-manager = {
-      url = "github:pjones/plasma-manager";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };
-    };
   };
 
   outputs = {
@@ -42,7 +34,7 @@
       # Acer Swift 3
       swift3 = {
         system = "x86_64-linux";
-        specialArgs = {inherit self;} // inputs;
+        specialArgs = {inherit inputs;};
         modules = [
           ./machines/swift3
           ./users/federico
@@ -52,7 +44,7 @@
       # Gateway ZX4250
       zx4250 = {
         system = "x86_64-linux";
-        specialArgs = {inherit self;} // inputs;
+        specialArgs = {inherit inputs;};
         modules = [
           ./machines/zx4250
           ./users/casa

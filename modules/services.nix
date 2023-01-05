@@ -18,15 +18,12 @@
       layout = "latam";
       libinput.enable = true;
 
-      desktopManager.plasma5 = {
+      desktopManager.gnome = {
         enable = true;
-        phononBackend = "vlc";
+        flashback.enableMetacity = true;
       };
 
-      displayManager = {
-        sddm.enable = true;
-        defaultSession = "plasmawayland";
-      };
+      displayManager.gdm.enable = true;
     };
 
     printing = {

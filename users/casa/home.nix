@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../../home-modules
   ];
@@ -12,14 +8,11 @@
     homeDirectory = "/home/casa";
 
     packages = with pkgs; [
+      # Internet
       google-chrome
+
+      # Office
       libreoffice-fresh
     ];
-  };
-
-  home.file."google-chrome.desktop" = {
-    source = "${pkgs.google-chrome}/share/applications/google-chrome.desktop";
-    target = "${config.xdg.userDirs.desktop}/google-chrome.desktop";
-    executable = true;
   };
 }

@@ -1,9 +1,10 @@
 {pkgs, ...}: {
   programs = {
     gamemode.enable = true;
-    gnupg.agent.enable = true;
-    kdeconnect.enable = true;
-    ssh.startAgent = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
