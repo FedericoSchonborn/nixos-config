@@ -37,5 +37,11 @@
         form.signOff = "true";
       };
     };
+
+    plasma.files = {
+      dolphinrc = {
+        VersionControl.enabledPlugins = "Git";
+      };
+    };
   };
 }

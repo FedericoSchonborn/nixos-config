@@ -10,7 +10,7 @@
       package = pkgs.breeze-icons;
     };
     cursorTheme = {
-      name = "breeze";
+      name = "Beeze_Snow";
       package = pkgs.breeze-icons;
     };
     font = {

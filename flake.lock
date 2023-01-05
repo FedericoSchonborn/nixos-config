@@ -94,16 +94,39 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1672875891,
-        "narHash": "sha256-5A4e/Uc6aWQmMsYnMOffLg766weMfCakxo2AnQXrJco=",
+        "lastModified": 1672878992,
+        "narHash": "sha256-26x2a7Kut9F4QzFXOR0HwtxXnMh34KfsxAhuOYit6tU=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "e14930ece703757a928cb62327d4157bb30a7a90",
+        "rev": "3196d3313a6b66b90a6bd2a681a03f1ea074f333",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "NUR",
+        "type": "github"
+      }
+    },
+    "plasma-manager": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1664383871,
+        "narHash": "sha256-dOnnzfqd/PCf1K3USKq2PqSGKmIqkr/SD7zHb1yoAyw=",
+        "owner": "pjones",
+        "repo": "plasma-manager",
+        "rev": "16c437e43a0e049b15c9bfd37295f6e978ea9955",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pjones",
+        "repo": "plasma-manager",
         "type": "github"
       }
     },
@@ -114,7 +137,8 @@
         "nix-index-database": "nix-index-database",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nur": "nur"
+        "nur": "nur",
+        "plasma-manager": "plasma-manager"
       }
     },
     "utils": {
