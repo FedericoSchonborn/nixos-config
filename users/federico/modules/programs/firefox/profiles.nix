@@ -65,9 +65,15 @@
     };
 
     settings = {
+      # Show tabs in titlebar (CSD).
       "browser.tabs.inTitlebar" = 1;
+      # Set search engine region to Argentina.
       "browser.search.region" = "AR";
+      # Always show bookmarks toolbar.
       "browser.toolbars.bookmarks.visibility" = "always";
+      # Disable Firefox Translations for English.
+      "browser.translation.neverForLanguages" = "en";
+      # Set locale to Spanish (Argentina), fallback to English (US).
       "intl.locale.requested" = "es-AR,en-US";
     };
   };
