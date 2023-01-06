@@ -13,6 +13,8 @@
       gnome-music
       # Replaced by Clapper.
       totem
+      # Unused.
+      gnome-tour
     ];
 
     systemPackages = with pkgs // pkgs.libsForQt5; [
