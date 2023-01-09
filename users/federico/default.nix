@@ -14,6 +14,7 @@
       path = "${homeDirectory}/.cargo/credentials";
       owner = "federico";
       group = "users";
+      mode = "0400";
     };
 
     gh-hosts = {
@@ -21,6 +22,7 @@
       path = "${homeDirectory}/.config/gh/hosts.yml";
       owner = "federico";
       group = "users";
+      mode = "0400";
     };
   };
 

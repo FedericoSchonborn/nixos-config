@@ -1,5 +1,6 @@
 {
   imports = [
+    ./gtk.nix
     ./programs.nix
   ];
 
